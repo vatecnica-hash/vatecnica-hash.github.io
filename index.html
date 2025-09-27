@@ -3,178 +3,250 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.A. Técnica - Servicio Técnico</title>
+  <title>V.A. Técnica - Reparación de Celulares y Notebooks</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
       color: #333;
     }
+
     header {
-      background: #111;
+      background: #000;
       color: #fff;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
     }
-    h1 {
+
+    header h1 {
       margin: 0;
-      font-size: 1.8em;
+      font-size: 28px;
+      letter-spacing: 1px;
     }
-    .brands, .contacto {
-      margin: 30px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 16px;
     }
-    .brands h3, .contacto h3 {
-      margin-bottom: 15px;
-      font-size: 1.3em;
+
+    section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: #111;
+    }
+
+    /* --- SERVICIOS --- */
+    .categoria {
+      margin: 40px 0;
+    }
+
+    .categoria h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
       color: #444;
     }
-    .brand-logos {
+
+    .marcas {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      align-items: center;
+      flex-wrap: wrap;
     }
-    .brand-logos img {
-      height: 40px;
-      object-fit: contain;
-      transition: transform 0.2s;
-    }
-    .brand-logos img:hover {
-      transform: scale(1.1);
-    }
-    /* Botón flotante de WhatsApp */
-    .whatsapp-float {
-      position: fixed;
+
+    .marcas img {
       width: 60px;
-      height: 60px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .marcas img:hover {
+      transform: scale(1.2);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #25D366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* --- BOTÓN FLOTANTE --- */
+    .social-menu {
+      position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px #999;
-      z-index: 100;
+      z-index: 1000;
     }
-    .whatsapp-float img {
-      width: 35px;
-      margin-top: 12px;
+
+    #toggle-social {
+      display: none;
     }
-    /* Redes sociales */
-    .social {
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
+
+    .social-toggle {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
     }
-    .social a img {
-      width: 40px;
-      transition: transform 0.2s;
+
+    .social-toggle img {
+      width: 32px;
+      height: 32px;
     }
-    .social a img:hover {
+
+    .social-toggle.whatsapp {
+      background: #25D366;
+    }
+
+    .social-toggle:hover {
       transform: scale(1.1);
     }
-    /* Contacto */
-    .contacto a {
-      display: inline-flex;
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      text-decoration: none;
-      background: #0078ff;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s;
+      margin-bottom: 10px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
     }
-    .contacto a:hover {
-      background: #005bb5;
+
+    .social-links a {
+      margin: 8px 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
     }
-    .contacto img {
-      width: 20px;
-      margin-right: 8px;
+
+    .social-links img {
+      width: 26px;
+      height: 26px;
+    }
+
+    .social-links a.instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+
+    .social-links a.facebook {
+      background: #1877F2;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.15);
+    }
+
+    /* Mostrar menú al hacer clic */
+    #toggle-social:checked ~ .social-links {
+      opacity: 1;
+      max-height: 500px;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>V.A. Técnica - Servicio Técnico</h1>
-  <p>Reparación de celulares, notebooks y equipos gamer</p>
-</header>
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>V.A. Técnica</h1>
+    <p>Reparación de Celulares, Notebooks y Servicio Gamer en Mar del Plata</p>
+  </header>
 
-<!-- 📱 Marcas de Celulares -->
-<div class="brands">
-  <h3>📱 Marcas de Celulares</h3>
-  <div class="brand-logos">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Apple">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png" alt="Samsung">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Motorola">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888854.png" alt="Xiaomi">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888838.png" alt="LG">
-    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124991.png" alt="OnePlus">
-    <img src="https://seeklogo.com/images/I/infinix-logo-7E95E48E48-seeklogo.com.png" alt="Infinix" height="40">
-    <img src="https://cdn-icons-png.flaticon.com/512/882/882704.png" alt="Oppo">
-    <img src="https://seeklogo.com/images/T/tcl-logo-7E77F9F423-seeklogo.com.png" alt="TCL" height="40">
-    <img src="https://seeklogo.com/images/A/alcatel-logo-0B2A1A6CE7-seeklogo.com.png" alt="Alcatel" height="40">
-    <img src="https://cdn-icons-png.flaticon.com/512/882/882729.png" alt="Nokia">
+  <!-- SECCIÓN DE SERVICIOS -->
+  <section class="servicios">
+    <h2>Nuestros Servicios</h2>
+
+    <!-- Reparación de Celulares -->
+    <div class="categoria">
+      <h3>Reparación de Celulares</h3>
+      <div class="marcas">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882700.png" alt="Samsung">
+        <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="Apple iPhone">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882729.png" alt="Motorola">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882747.png" alt="Xiaomi">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882708.png" alt="Huawei">
+      </div>
+    </div>
+
+    <!-- Reparación de Notebooks -->
+    <div class="categoria">
+      <h3>Reparación de Notebooks</h3>
+      <div class="marcas">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882738.png" alt="HP">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882735.png" alt="Dell">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882737.png" alt="Asus">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882739.png" alt="Lenovo">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882736.png" alt="Acer">
+      </div>
+    </div>
+
+    <!-- División Gamer -->
+    <div class="categoria">
+      <h3>División Gamer</h3>
+      <div class="marcas">
+        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="MSI">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882742.png" alt="Alienware">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882743.png" alt="ROG">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882741.png" alt="Gigabyte">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 V.A. Técnica - Mar del Plata. Todos los derechos reservados.</p>
+    <p>📍 <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">Ver ubicación en Google Maps</a></p>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE -->
+  <div class="social-menu">
+    <input type="checkbox" id="toggle-social">
+    
+    <!-- Botón principal (WhatsApp) -->
+    <label for="toggle-social" class="social-toggle whatsapp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </label>
+
+    <!-- Menú oculto con Instagram y Facebook -->
+    <div class="social-links">
+      <a href="https://www.instagram.com/va_tecnica/" target="_blank" class="instagram" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61581236796815" target="_blank" class="facebook" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+    </div>
   </div>
-</div>
-
-<!-- 💻 Marcas de Notebooks -->
-<div class="brands">
-  <h3>💻 Marcas de Notebooks</h3>
-  <div class="brand-logos">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888889.png" alt="HP">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888848.png" alt="Dell">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Apple">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888850.png" alt="Asus">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888805.png" alt="Acer">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="Lenovo">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888886.png" alt="MSI">
-    <img src="https://seeklogo.com/images/G/gigabyte-logo-270B5A53FC-seeklogo.com.png" alt="Gigabyte" height="40">
-  </div>
-</div>
-
-<!-- 🎮 Series Gamer -->
-<div class="brands">
-  <h3>🎮 Series Gamer</h3>
-  <div class="brand-logos">
-    <img src="https://seeklogo.com/images/R/republic-of-gamers-logo-4E2B62D3CF-seeklogo.com.png" alt="Asus ROG" height="40">
-    <img src="https://seeklogo.com/images/A/alienware-logo-00590F4620-seeklogo.com.png" alt="Alienware" height="40">
-    <img src="https://seeklogo.com/images/M/msi-gaming-logo-EE4E0384E2-seeklogo.com.png" alt="MSI Gaming" height="40">
-    <img src="https://seeklogo.com/images/A/acer-predator-logo-07F19CB0C3-seeklogo.com.png" alt="Acer Predator" height="40">
-    <img src="https://seeklogo.com/images/H/hp-omen-logo-67F7D13F1E-seeklogo.com.png" alt="HP Omen" height="40">
-  </div>
-</div>
-
-<!-- 📍 Contacto y Ubicación -->
-<div class="contacto">
-  <h3>📍 Nuestra Ubicación</h3>
-  <p>Visítanos en nuestro taller. Haz clic en el pin para abrir en Google Maps:</p>
-  <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Pin"> Ver en Google Maps
-  </a>
-</div>
-
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/5492291515022" class="whatsapp-float" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
-<!-- Redes sociales -->
-<div class="social">
-  <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-  <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111392.png" alt="Facebook"></a>
-</div>
 
 </body>
 </html>
