@@ -3,250 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.A. Técnica - Reparación de Celulares y Notebooks</title>
+  <title>V.A. Técnica - Reparación de Celulares y Notebooks en Mar del Plata</title>
+  <meta name="description" content="Servicio técnico especializado en reparación de celulares y notebooks en Mar del Plata. Arreglo de pantallas, cambio de baterías, software, mantenimiento y más. Atención rápida y garantizada.">
+  <meta name="keywords" content="reparación de celulares Mar del Plata, arreglo de notebooks, servicio técnico, cambio de pantalla, cambio de batería, arreglo de celular cerca, técnico de notebooks, mantenimiento de celulares, reparación urgente Mar del Plata">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      color: #333;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      padding-bottom: 120px; /* espacio para botón flotante */
     }
-
-    header {
-      background: #000;
-      color: #fff;
-      padding: 20px;
+    .card {
+      background: #1a1a1a;
+      padding: 30px 20px;
+      border-radius: 20px;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 16px;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 26px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
       margin-bottom: 30px;
-      color: #111;
     }
-
-    /* --- SERVICIOS --- */
-    .categoria {
-      margin: 40px 0;
+    .card img {
+      max-width: 150px;
+      margin-bottom: 15px;
     }
-
-    .categoria h3 {
+    .card h1 {
+      margin: 10px 0;
+      font-size: 24px;
+      color: #4da6ff;
+    }
+    .info {
+      margin: 20px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .info a {
+      color: #4da6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .info img {
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    .seo {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 15px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .seo a {
+      color: #4da6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #aaa;
+    }
+    /* Sección de marcas */
+    .marcas-section {
+      background: #1a1a1a;
+      padding: 25px 20px;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      margin: 20px 0;
+    }
+    .marcas-section h2 {
       text-align: center;
-      font-size: 20px;
       margin-bottom: 20px;
-      color: #444;
+      color: #4da6ff;
     }
-
+    .categoria {
+      margin: 20px 0;
+    }
+    .categoria h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #f5f5f5;
+      text-align: center;
+    }
     .marcas {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
     }
-
     .marcas img {
       width: 60px;
       height: auto;
       transition: transform 0.3s;
+      filter: brightness(0) invert(1);
     }
-
     .marcas img:hover {
       transform: scale(1.2);
     }
-
-    /* --- FOOTER --- */
-    footer {
-      background: #111;
-      color: #eee;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #25D366;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* --- BOTÓN FLOTANTE --- */
-    .social-menu {
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 1000;
-    }
-
-    #toggle-social {
-      display: none;
-    }
-
-    .social-toggle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 60px;
-      height: 60px;
+      background: #25d366;
+      color: white;
       border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: 0.3s;
+      z-index: 999;
     }
-
-    .social-toggle img {
-      width: 32px;
-      height: 32px;
-    }
-
-    .social-toggle.whatsapp {
-      background: #25D366;
-    }
-
-    .social-toggle:hover {
+    .whatsapp-float:hover {
+      background: #1ebe5c;
       transform: scale(1.1);
     }
-
-    .social-links {
+    .whatsapp-float img {
+      height: 32px;
+      width: 32px;
+    }
+    /* Barra lateral de redes sociales */
+    .social-float {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-bottom: 10px;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transform: translateY(20px);
-      transition: all 0.4s ease;
+      gap: 15px;
+      z-index: 999;
     }
-
-    .social-links a {
-      margin: 8px 0;
-      width: 50px;
-      height: 50px;
+    .social-float a {
+      padding: 10px;
       border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: 0.3s;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
     }
-
-    .social-links img {
-      width: 26px;
-      height: 26px;
+    .social-float .instagram {
+      background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
     }
-
-    .social-links a.instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    .social-float .facebook {
+      background: #1877f2;
     }
-
-    .social-links a.facebook {
-      background: #1877F2;
-    }
-
-    .social-links a:hover {
+    .social-float a:hover {
       transform: scale(1.15);
+      filter: brightness(1.2);
     }
-
-    /* Mostrar menú al hacer clic */
-    #toggle-social:checked ~ .social-links {
-      opacity: 1;
-      max-height: 500px;
-      transform: translateY(0);
+    .social-float img {
+      height: 28px;
+      width: 28px;
+      filter: invert(1);
     }
   </style>
 </head>
 <body>
-
-  <!-- ENCABEZADO -->
-  <header>
+  <div class="card">
+    <!-- Logo -->
+    <img src="logo-va.png" alt="Logo V.A. Técnica reparación de celulares y notebooks">
     <h1>V.A. Técnica</h1>
-    <p>Reparación de Celulares, Notebooks y Servicio Gamer en Mar del Plata</p>
-  </header>
+    <p>Servicio Técnico Especializado</p>
 
-  <!-- SECCIÓN DE SERVICIOS -->
-  <section class="servicios">
-    <h2>Nuestros Servicios</h2>
-
-    <!-- Reparación de Celulares -->
-    <div class="categoria">
-      <h3>Reparación de Celulares</h3>
-      <div class="marcas">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882700.png" alt="Samsung">
-        <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="Apple iPhone">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882729.png" alt="Motorola">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882747.png" alt="Xiaomi">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882708.png" alt="Huawei">
-      </div>
+    <div class="info">
+      <p><strong>Dirección:</strong><br> 
+        <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">
+          <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Ubicación en Google Maps">
+          Falucho 2078, Piso 2, Depto B - Mar del Plata
+        </a>
+      </p>
+      <p><strong>Teléfono:</strong><br> 
+        <a href="tel:+542291515022">+54 2291 515022</a>
+      </p>
+      <p><strong>Reseñas en Google:</strong><br> ⭐⭐⭐⭐⭐ (5.0 / 5) - 163 reseñas</p>
     </div>
 
-    <!-- Reparación de Notebooks -->
-    <div class="categoria">
-      <h3>Reparación de Notebooks</h3>
-      <div class="marcas">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882738.png" alt="HP">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882735.png" alt="Dell">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882737.png" alt="Asus">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882739.png" alt="Lenovo">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882736.png" alt="Acer">
-      </div>
+    <!-- SEO Ultra Optimizado -->
+    <div class="seo">
+      <p>
+        En <strong>V.A. Técnica</strong> somos especialistas en la <strong>reparación de celulares</strong> y <strong>notebooks en Mar del Plata</strong>. Realizamos <strong>cambio de pantallas rotas</strong>, <strong>arreglo de baterías</strong>, actualización y optimización de <strong>software</strong>, limpieza de placas y <strong>mantenimiento preventivo</strong>.
+      </p>
+      <p>
+        Si buscás un <strong>servicio técnico de celulares cerca de vos</strong> o un <strong>técnico de notebooks en Mar del Plata</strong>, llegaste al lugar correcto. Atendemos todas las marcas y modelos: Samsung, Motorola, Xiaomi, iPhone, HP, Dell, Lenovo, Asus y más.
+      </p>
+      <p>
+        Te ofrecemos <strong>arreglos rápidos, seguros y con garantía</strong>. Miles de clientes ya confiaron en nosotros para solucionar sus problemas de hardware y software.  
+        <a href="https://wa.me/542291515022" target="_blank">Contactanos por WhatsApp</a> y traé tu equipo hoy mismo para un diagnóstico inmediato.
+      </p>
     </div>
 
-    <!-- División Gamer -->
-    <div class="categoria">
-      <h3>División Gamer</h3>
-      <div class="marcas">
-        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="MSI">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882742.png" alt="Alienware">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882743.png" alt="ROG">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882741.png" alt="Gigabyte">
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 V.A. Técnica - Mar del Plata. Todos los derechos reservados.</p>
-    <p>📍 <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">Ver ubicación en Google Maps</a></p>
-  </footer>
-
-  <!-- BOTÓN FLOTANTE -->
-  <div class="social-menu">
-    <input type="checkbox" id="toggle-social">
-    
-    <!-- Botón principal (WhatsApp) -->
-    <label for="toggle-social" class="social-toggle whatsapp">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    </label>
-
-    <!-- Menú oculto con Instagram y Facebook -->
-    <div class="social-links">
-      <a href="https://www.instagram.com/va_tecnica/" target="_blank" class="instagram" title="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61581236796815" target="_blank" class="facebook" title="Facebook">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-      </a>
-    </div>
+    <footer>
+      © 2025 V.A. Técnica - Todos los derechos reservados
+    </footer>
   </div>
 
-</body>
-</html>
+  <!-- NUEVA SECCIÓN: MARCAS -->
+  <div class="marcas-section">
+    <h2>Marcas que Reparamos</h2>
+
+    <div class="categoria">
+      <h3>📱 Celulares</h3>
+      <div class="marcas">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple iPhone">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Motorola_logo.svg" alt="Motorola">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Huawei_Standard_logo.svg" alt="Huawei">
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>💻 Notebooks</h3>
+      <div class="marcas">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/HP_logo_2012.svg" alt="HP">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Lenovo_logo_2015.svg" alt="Lenovo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/ASUS_Logo.svg" alt="Asus">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Acer_2011.svg" alt="Acer">
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>🎮 División Gamer</h3>
+      <div class="marcas">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/
