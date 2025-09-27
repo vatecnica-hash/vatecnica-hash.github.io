@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>V.A. Técnica - Reparación de Celulares y Notebooks en Mar del Plata</title>
   <meta name="description" content="Servicio técnico especializado en reparación de celulares y notebooks en Mar del Plata. Arreglo de pantallas, cambio de baterías, software, mantenimiento y más. Atención rápida y garantizada.">
   <meta name="keywords" content="reparación de celulares Mar del Plata, arreglo de notebooks, servicio técnico, cambio de pantalla, cambio de batería, arreglo de celular cerca, técnico de notebooks, mantenimiento de celulares, reparación urgente Mar del Plata">
@@ -39,38 +39,13 @@
       font-size: 24px;
       color: #4da6ff;
     }
-    .info {
-      margin: 20px 0;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    .info a {
-      color: #4da6ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .info img {
-      height: 18px;
-      vertical-align: middle;
-      margin-right: 6px;
-    }
-    .seo {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 15px;
-      line-height: 1.6;
-      text-align: justify;
-    }
-    .seo a {
-      color: #4da6ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #aaa;
-    }
+    .info { margin: 20px 0; font-size: 16px; line-height: 1.6; }
+    .info a { color: #4da6ff; text-decoration: none; font-weight: bold; }
+    .info img { height: 18px; vertical-align: middle; margin-right: 6px; }
+    .seo { font-size: 14px; color: #ccc; margin-top: 15px; line-height: 1.6; text-align: justify; }
+    .seo a { color: #4da6ff; text-decoration: none; font-weight: bold; }
+    footer { margin-top: 20px; font-size: 12px; color: #aaa; }
+
     /* Sección de marcas */
     .marcas-section {
       background: #1a1a1a;
@@ -81,20 +56,9 @@
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
       margin: 20px 0;
     }
-    .marcas-section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #4da6ff;
-    }
-    .categoria {
-      margin: 20px 0;
-    }
-    .categoria h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #f5f5f5;
-      text-align: center;
-    }
+    .marcas-section h2 { text-align: center; margin-bottom: 20px; color: #4da6ff; }
+    .categoria { margin: 20px 0; }
+    .categoria h3 { font-size: 18px; margin-bottom: 15px; color: #f5f5f5; text-align: center; }
     .marcas {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -105,13 +69,13 @@
     .marcas img {
       width: 70px;
       height: 70px;
-      transition: transform 0.3s;
+      transition: transform 0.25s;
       object-fit: contain;
       background: transparent;
+      filter: brightness(1); /* ajustá si querés iconos invertidos */
     }
-    .marcas img:hover {
-      transform: scale(1.15);
-    }
+    .marcas img:hover { transform: scale(1.12); }
+
     /* Botonera flotante (columna derecha) */
     .float-buttons {
       position: fixed;
@@ -133,19 +97,13 @@
       transition: 0.3s;
       overflow: hidden;
     }
-    .float-buttons a img {
-      width: 28px;
-      height: 28px;
-      display: block;
-    }
-    .float-buttons a:hover {
-      transform: scale(1.15);
-      filter: brightness(1.2);
-    }
+    .float-buttons a img { width: 28px; height: 28px; display:block; }
+    .float-buttons a:hover { transform: scale(1.12); filter: brightness(1.15); }
     .whatsapp { background: #25d366; }
-    .maps { background: #ffffff00; } /* transparente para que el icono tenga su color natural */
-    .instagram { background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
+    .maps { background: #ffffff00; } /* icono maps tiene color propio */
+    .instagram { background: radial-gradient(circle at 30% 30%, #feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); }
     .facebook { background: #1877f2; }
+
     @media (max-width: 480px) {
       .card { padding: 20px; max-width: 95%; }
       .marcas img { width: 56px; height: 56px; }
@@ -161,14 +119,14 @@
     <p>Servicio Técnico Especializado</p>
 
     <div class="info">
-      <p><strong>Dirección:</strong><br> 
-        <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">
-          <!-- google maps pequeño al lado de la dirección -->
+      <p><strong>Dirección:</strong><br>
+        <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank" rel="noreferrer">
+          <!-- icono de maps fiable -->
           <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación en Google Maps" style="height:18px; vertical-align:middle; margin-right:6px;">
           Falucho 2078, Piso 2, Depto B - Mar del Plata
         </a>
       </p>
-      <p><strong>Teléfono:</strong><br> 
+      <p><strong>Teléfono:</strong><br>
         <a href="tel:+542291515022">+54 2291 515022</a>
       </p>
       <p><strong>Reseñas en Google:</strong><br> ⭐⭐⭐⭐⭐ (5.0 / 5) - 163 reseñas</p>
@@ -176,21 +134,17 @@
 
     <div class="seo">
       <p>
-        En <strong>V.A. Técnica</strong> somos especialistas en la <strong>reparación de celulares</strong> y <strong>notebooks en Mar del Plata</strong>. Realizamos <strong>cambio de pantallas rotas</strong>, <strong>arreglo de baterías</strong>, actualización y optimización de <strong>software</strong>, limpieza de placas y <strong>mantenimiento preventivo</strong>.
+        En <strong>V.A. Técnica</strong> somos especialistas en la <strong>reparación de celulares</strong> y <strong>notebooks en Mar del Plata</strong>. Realizamos <strong>cambio de pantallas rotas</strong>, <strong>cambio de baterías</strong>, diagnóstico y reparación de placas, <strong>optimización de software</strong> y <strong>mantenimiento preventivo</strong>.
       </p>
       <p>
-        Si buscás un <strong>servicio técnico de celulares cerca de vos</strong> o un <strong>técnico de notebooks en Mar del Plata</strong>, llegaste al lugar correcto. Atendemos todas las marcas y modelos.
+        Si buscás un <strong>servicio técnico de celulares</strong> o un <strong>técnico de notebooks en Mar del Plata</strong>, encontranos acá. Atendemos todas las marcas y modelos con repuestos de calidad y garantía.
       </p>
       <p>
-        <strong>Marcas que reparamos:</strong> Samsung, Apple (iPhone), Motorola, Xiaomi, Oppo, OnePlus, LG, Nokia, Infinix; HP, Dell, Lenovo, Asus, Acer, Huawei, Samsung, Compaq; división Gamer: ASUS ROG, Lenovo Legion, HP Omen, Alienware, MSI, Gigabyte, Razer.  
-        Te ofrecemos <strong>arreglos rápidos, seguros y con garantía</strong>.  
-        <a href="https://wa.me/542291515022" target="_blank">Contactanos por WhatsApp</a>.
+        <a href="https://wa.me/542291515022" target="_blank" rel="noreferrer">Contactanos por WhatsApp</a> para diagnóstico inmediato.
       </p>
     </div>
 
-    <footer>
-      © 2025 V.A. Técnica - Todos los derechos reservados
-    </footer>
+    <footer>© 2025 V.A. Técnica - Todos los derechos reservados</footer>
   </div>
 
   <!-- Sección de marcas -->
@@ -200,69 +154,40 @@
     <div class="categoria">
       <h3>Celulares</h3>
       <div class="marcas">
-        <!-- principales marcas de celulares (Apple, Samsung, Xiaomi, Motorola, Oppo, OnePlus, LG, Nokia, Infinix, Pixel) -->
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732245.png" alt="Apple" title="Apple (iPhone)">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882700.png" alt="Samsung" title="Samsung">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882747.png" alt="Xiaomi" title="Xiaomi">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882729.png" alt="Motorola" title="Motorola">
-        <!-- Si no tenés hosting local, estos placeholders son fáciles de reemplazar por tus archivos -->
-        <img src="https://via.placeholder.com/70x70.png?text=OPPO" alt="Oppo" title="Oppo">
-        <img src="https://via.placeholder.com/70x70.png?text=ONEPLUS" alt="OnePlus" title="OnePlus">
-        <img src="https://via.placeholder.com/70x70.png?text=LG" alt="LG" title="LG">
-        <img src="https://via.placeholder.com/70x70.png?text=NOKIA" alt="Nokia" title="Nokia">
-        <img src="https://via.placeholder.com/70x70.png?text=INFINIX" alt="Infinix" title="Infinix">
-        <!-- opcional: Pixel / Sony -->
-        <img src="https://via.placeholder.com/70x70.png?text=PIXEL" alt="Google Pixel" title="Google Pixel">
+        <!-- LOGOS CELULARES (oficiales / Wikimedia cuando está disponible) -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" title="Apple (iPhone)" aria-label="Apple">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Samsung_logo.svg" alt="Samsung" title="Samsung" aria-label="Samsung">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi" title="Xiaomi" aria-label="Xiaomi">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Motorola_logo.svg" alt="Motorola" title="Motorola" aria-label="Motorola">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OPPO_Logo.svg" alt="Oppo" title="Oppo" aria-label="Oppo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OnePlus_Logo_%282021%29.svg" alt="OnePlus" title="OnePlus" aria-label="OnePlus">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/LG_logo_%282014%29.svg" alt="LG" title="LG" aria-label="LG">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Nokia_wordmark.svg" alt="Nokia" title="Nokia" aria-label="Nokia">
+        <!-- Infinix y Pixel: algunos logos no están siempre en repositorios únicos; pongo placeholders para que las reemplaces por tu archivo local si querés -->
+        <img src="https://via.placeholder.com/70x70.png?text=INFINIX" alt="Infinix (placeholder)" title="Infinix (reemplazar por logo oficial si lo tenés)" aria-label="Infinix">
+        <img src="https://via.placeholder.com/70x70.png?text=PIXEL" alt="Google Pixel (placeholder)" title="Google Pixel (reemplazar por logo oficial si lo tenés)" aria-label="Google Pixel">
       </div>
     </div>
 
     <div class="categoria">
       <h3>Notebooks</h3>
       <div class="marcas">
-        <!-- Notebooks: Asus, Acer, Dell, HP, Huawei, Samsung, Compaq, Lenovo -->
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882737.png" alt="Asus" title="Asus">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882736.png" alt="Acer" title="Acer">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882735.png" alt="Dell" title="Dell">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882738.png" alt="HP" title="HP">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882708.png" alt="Huawei" title="Huawei">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882700.png" alt="Samsung" title="Samsung (notebooks)">
-        <img src="https://via.placeholder.com/70x70.png?text=COMPAQ" alt="Compaq" title="Compaq">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882739.png" alt="Lenovo" title="Lenovo">
-        <!-- opcionales -->
-        <img src="https://via.placeholder.com/70x70.png?text=TOSHIBA" alt="Toshiba" title="Toshiba">
-        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="MSI" title="MSI">
+        <!-- LOGOS NOTEBOOKS -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/AsusTek_logo.svg" alt="Asus" title="Asus" aria-label="Asus">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Acer_logo.svg" alt="Acer" title="Acer" aria-label="Acer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" title="Dell" aria-label="Dell">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HP_logo_2012.svg" alt="HP" title="HP" aria-label="HP">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Huawei_logo.svg" alt="Huawei" title="Huawei" aria-label="Huawei">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Samsung_logo.svg" alt="Samsung (notebooks)" title="Samsung" aria-label="Samsung">
+        <img src="https://via.placeholder.com/70x70.png?text=COMPAQ" alt="Compaq (placeholder)" title="Compaq (reemplazar por logo oficial si lo tenés)" aria-label="Compaq">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Lenovo_logo_2015.svg" alt="Lenovo" title="Lenovo" aria-label="Lenovo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Toshiba_logo.svg" alt="Toshiba" title="Toshiba" aria-label="Toshiba">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/MSI_Logo.svg" alt="MSI" title="MSI" aria-label="MSI">
       </div>
     </div>
 
     <div class="categoria">
       <h3>División Gamer</h3>
       <div class="marcas">
-        <!-- Gamer: ASUS ROG, Lenovo Legion, HP Omen, Alienware, MSI, Gigabyte, Razer -->
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882743.png" alt="ASUS ROG" title="ASUS ROG">
-        <img src="https://via.placeholder.com/70x70.png?text=LEGION" alt="Lenovo Legion" title="Lenovo Legion">
-        <img src="https://via.placeholder.com/70x70.png?text=OMEN" alt="HP Omen" title="HP Omen">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882742.png" alt="Alienware" title="Alienware">
-        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="MSI" title="MSI">
-        <img src="https://cdn-icons-png.flaticon.com/512/882/882741.png" alt="Gigabyte" title="Gigabyte">
-        <img src="https://via.placeholder.com/70x70.png?text=RAZER" alt="Razer" title="Razer">
-      </div>
-    </div>
-  </div>
-
-  <!-- Botonera flotante derecha -->
-  <div class="float-buttons">
-    <a href="https://wa.me/542291515022" class="whatsapp" target="_blank" aria-label="WhatsApp - Contacto">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    </a>
-    <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" class="maps" target="_blank" aria-label="Google Maps">
-      <img src="https://img.icons8.com/color/48/google-maps.png" alt="Google Maps">
-    </a>
-    <a href="https://www.instagram.com/va_tecnica/" class="instagram" target="_blank" aria-label="Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-    </a>
-    <a href="https://www.facebook.com/profile.php?id=61581236796815" class="facebook" target="_blank" aria-label="Facebook">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-    </a>
-  </div>
-</body>
-</html>
+        <!-- LOGOS GAMER (uso Wikimedia cuando existe) -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Republic_of_Gamers_logo.svg" alt="ASUS ROG" title="ASUS ROG" aria-label="ASUS ROG">
