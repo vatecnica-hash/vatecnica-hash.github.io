@@ -72,9 +72,24 @@
       transition: transform 0.25s;
       object-fit: contain;
       background: transparent;
-      filter: brightness(1); /* ajustá si querés iconos invertidos */
+      filter: brightness(1);
     }
     .marcas img:hover { transform: scale(1.12); }
+
+    /* Estilo para cuando falla un logo */
+    .logo-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
 
     /* Botonera flotante (columna derecha) */
     .float-buttons {
@@ -100,13 +115,14 @@
     .float-buttons a img { width: 28px; height: 28px; display:block; }
     .float-buttons a:hover { transform: scale(1.12); filter: brightness(1.15); }
     .whatsapp { background: #25d366; }
-    .maps { background: #ffffff00; } /* icono maps tiene color propio */
+    .maps { background: #ffffff00; }
     .instagram { background: radial-gradient(circle at 30% 30%, #feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); }
     .facebook { background: #1877f2; }
 
     @media (max-width: 480px) {
       .card { padding: 20px; max-width: 95%; }
       .marcas img { width: 56px; height: 56px; }
+      .logo-fallback { width: 56px; height: 56px; font-size: 10px; }
       .float-buttons a { width: 48px; height: 48px; }
       .float-buttons a img { width: 24px; height: 24px; }
     }
@@ -121,7 +137,6 @@
     <div class="info">
       <p><strong>Dirección:</strong><br>
         <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank" rel="noreferrer">
-          <!-- icono de maps fiable -->
           <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación en Google Maps" style="height:18px; vertical-align:middle; margin-right:6px;">
           Falucho 2078, Piso 2, Depto B - Mar del Plata
         </a>
@@ -154,50 +169,49 @@
     <div class="categoria">
       <h3>Celulares</h3>
       <div class="marcas">
-        <!-- LOGOS CELULARES (oficiales / Wikimedia cuando está disponible) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" title="Apple (iPhone)" aria-label="Apple">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Samsung_logo.svg" alt="Samsung" title="Samsung" aria-label="Samsung">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi" title="Xiaomi" aria-label="Xiaomi">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Motorola_logo.svg" alt="Motorola" title="Motorola" aria-label="Motorola">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OPPO_Logo.svg" alt="Oppo" title="Oppo" aria-label="Oppo">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OnePlus_Logo_%282021%29.svg" alt="OnePlus" title="OnePlus" aria-label="OnePlus">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/LG_logo_%282014%29.svg" alt="LG" title="LG" aria-label="LG">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Nokia_wordmark.svg" alt="Nokia" title="Nokia" aria-label="Nokia">
-        <!-- Infinix y Pixel: algunos logos no están siempre en repositorios únicos; pongo placeholders para que las reemplaces por tu archivo local si querés -->
-        <img src="https://via.placeholder.com/70x70.png?text=INFINIX" alt="Infinix (placeholder)" title="Infinix (reemplazar por logo oficial si lo tenés)" aria-label="Infinix">
-        <img src="https://via.placeholder.com/70x70.png?text=PIXEL" alt="Google Pixel (placeholder)" title="Google Pixel (reemplazar por logo oficial si lo tenés)" aria-label="Google Pixel">
+        <!-- Logos de celulares desde logos-world.net -->
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" title="Apple (iPhone)">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Samsung" title="Samsung">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Xiaomi-Logo.png" alt="Xiaomi" title="Xiaomi">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Motorola-Logo.png" alt="Motorola" title="Motorola">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Oppo-Logo.png" alt="Oppo" title="Oppo">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/OnePlus-Logo.png" alt="OnePlus" title="OnePlus">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/LG-Logo.png" alt="LG" title="LG">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Nokia-Logo.png" alt="Nokia" title="Nokia">
+        <img src="https://logos-world.net/wp-content/uploads/2022/01/Infinix-Logo.png" alt="Infinix" title="Infinix">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Google-Pixel-Logo.png" alt="Google Pixel" title="Google Pixel">
       </div>
     </div>
 
     <div class="categoria">
       <h3>Notebooks</h3>
       <div class="marcas">
-        <!-- LOGOS NOTEBOOKS -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/AsusTek_logo.svg" alt="Asus" title="Asus" aria-label="Asus">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Acer_logo.svg" alt="Acer" title="Acer" aria-label="Acer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" title="Dell" aria-label="Dell">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HP_logo_2012.svg" alt="HP" title="HP" aria-label="HP">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Huawei_logo.svg" alt="Huawei" title="Huawei" aria-label="Huawei">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Samsung_logo.svg" alt="Samsung (notebooks)" title="Samsung" aria-label="Samsung">
-        <img src="https://via.placeholder.com/70x70.png?text=COMPAQ" alt="Compaq (placeholder)" title="Compaq (reemplazar por logo oficial si lo tenés)" aria-label="Compaq">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Lenovo_logo_2015.svg" alt="Lenovo" title="Lenovo" aria-label="Lenovo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Toshiba_logo.svg" alt="Toshiba" title="Toshiba" aria-label="Toshiba">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/MSI_Logo.svg" alt="MSI" title="MSI" aria-label="MSI">
+        <!-- Logos de notebooks desde logos-world.net -->
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Asus-Logo.png" alt="Asus" title="Asus">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Acer-Logo.png" alt="Acer" title="Acer">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Dell-Logo.png" alt="Dell" title="Dell">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/HP-Logo.png" alt="HP" title="HP">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Huawei-Logo.png" alt="Huawei" title="Huawei">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Samsung (notebooks)" title="Samsung">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Compaq-Logo.png" alt="Compaq" title="Compaq">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Lenovo-Logo.png" alt="Lenovo" title="Lenovo">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Toshiba-Logo.png" alt="Toshiba" title="Toshiba">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="MSI" title="MSI">
       </div>
     </div>
 
     <div class="categoria">
       <h3>División Gamer</h3>
       <div class="marcas">
-        <!-- LOGOS GAMER (uso Wikimedia cuando existe) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Republic_of_Gamers_logo.svg" alt="ASUS ROG" title="ASUS ROG" aria-label="ASUS ROG">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Alienware_logo.svg" alt="Alienware" title="Alienware" aria-label="Alienware">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Lenovo_Legion_logo.svg" alt="Lenovo Legion" title="Lenovo Legion" aria-label="Lenovo Legion">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/HP_Omen_logo.svg" alt="HP Omen" title="HP Omen" aria-label="HP Omen">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/ASUS_TUF_Gaming_logo.svg" alt="ASUS TUF Gaming" title="ASUS TUF Gaming" aria-label="ASUS TUF Gaming">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/MSI_Logo.svg" alt="MSI Gaming" title="MSI Gaming" aria-label="MSI Gaming">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Acer_Predator_logo.svg" alt="Acer Predator" title="Acer Predator" aria-label="Acer Predator">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_G_Series_logo.svg" alt="Dell G Series" title="Dell G Series" aria-label="Dell G Series">
+        <!-- Logos de gaming desde logos-world.net -->
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-ROG-Logo.png" alt="ASUS ROG" title="ASUS ROG">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Alienware-Logo.png" alt="Alienware" title="Alienware">
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Lenovo-Legion-Logo.png" alt="Lenovo Legion" title="Lenovo Legion">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/HP-Omen-Logo.png" alt="HP Omen" title="HP Omen">
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-TUF-Logo.png" alt="ASUS TUF Gaming" title="ASUS TUF Gaming">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="MSI Gaming" title="MSI Gaming">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Acer-Predator-Logo.png" alt="Acer Predator" title="Acer Predator">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Dell-G-Series-Logo.png" alt="Dell G Series" title="Dell G Series">
       </div>
     </div>
   </div>
