@@ -93,7 +93,6 @@
       color: #4da6ff;
       margin-bottom: 10px;
     }
-    /* Carrusel horizontal para móviles */
     .brand-logos {
       display: flex;
       overflow-x: auto;
@@ -109,18 +108,16 @@
     .brand-logos img:hover {
       transform: scale(1.15);
     }
-    /* Ocultar scrollbar en móviles */
     .brand-logos::-webkit-scrollbar {
       display: none;
     }
-
     footer {
       margin-top: 20px;
       font-size: 12px;
       color: #aaa;
     }
 
-    /* --- Botón flotante WhatsApp + redes --- */
+    /* Botón flotante WhatsApp + redes */
     .social-menu {
       position: fixed;
       bottom: 20px;
@@ -185,7 +182,6 @@
     .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
     .facebook { background: #1877f2; }
 
-    /* Barra lateral fija en escritorio */
     @media (min-width: 768px) {
       .social-menu {
         top: 50%;
@@ -207,7 +203,6 @@
 </head>
 <body>
   <div class="card">
-    <!-- Logo -->
     <img src="logo-va.png" alt="Logo V.A. Técnica reparación de celulares y notebooks">
     <h1>V.A. Técnica</h1>
     <p>Servicio Técnico Especializado</p>
@@ -225,21 +220,20 @@
       <p><strong>Reseñas en Google:</strong><br> ⭐⭐⭐⭐⭐ (5.0 / 5) - 163 reseñas</p>
     </div>
 
-    <!-- SEO Ultra Optimizado -->
     <div class="seo">
       <p>
-        En <strong>V.A. Técnica</strong> somos especialistas en la <strong>reparación de celulares</strong> y <strong>notebooks en Mar del Plata</strong>. Realizamos <strong>cambio de pantallas rotas</strong>, <strong>arreglo de baterías</strong>, actualización y optimización de <strong>software</strong>, limpieza de placas y <strong>mantenimiento preventivo</strong>.
+        En <strong>V.A. Técnica</strong> somos especialistas en <strong>reparación de celulares</strong> y <strong>notebooks en Mar del Plata</strong>. Realizamos <strong>cambio de pantallas</strong>, <strong>arreglo de baterías</strong>, optimización de software, limpieza de placas y mantenimiento preventivo.
       </p>
       <p>
-        Atendemos todas las marcas y modelos: Samsung, Apple, Motorola, Xiaomi, Huawei, LG, HP, Dell, Lenovo, Asus, MSI y Acer.
+        Atendemos todas las marcas: Samsung, Apple, Motorola, Xiaomi, Huawei, LG, HP, Dell, Lenovo, Asus, MSI, Acer.  
+        Series gamer: Asus ROG, Alienware, MSI Gaming, Acer Predator, HP Omen.
       </p>
       <p>
-        Te ofrecemos <strong>arreglos rápidos, seguros y con garantía</strong>.  
-        <a href="https://wa.me/542291515022" target="_blank">Contactanos por WhatsApp</a> y traé tu equipo hoy mismo.
+        Arreglos rápidos, seguros y con garantía.  
+        <a href="https://wa.me/542291515022" target="_blank">Contactanos por WhatsApp</a>.
       </p>
     </div>
 
-    <!-- Marcas en carrusel -->
     <div class="brands">
       <h3>📱 Marcas de Celulares</h3>
       <div class="brand-logos">
@@ -258,4 +252,49 @@
         <img src="https://cdn-icons-png.flaticon.com/512/888/888889.png" alt="HP">
         <img src="https://cdn-icons-png.flaticon.com/512/888/888848.png" alt="Dell">
         <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="Lenovo">
-        <img src="https://cdn-icons
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888850.png" alt="Asus">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888886.png" alt="MSI">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888805.png" alt="Acer">
+      </div>
+      <h3>🎮 Series Gamer</h3>
+      <div class="brand-logos">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888858.png" alt="Asus ROG">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888840.png" alt="Alienware">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888886.png" alt="MSI Gaming">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888805.png" alt="Acer Predator">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888889.png" alt="HP Omen">
+      </div>
+    </div>
+
+    <div class="whatsapp">
+      <a href="https://wa.me/542291515022" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        Chateá con nosotros
+      </a>
+    </div>
+
+    <footer>
+      © 2025 V.A. Técnica - Todos los derechos reservados
+    </footer>
+  </div>
+
+  <!-- Botón flotante -->
+  <div class="social-menu">
+    <input type="checkbox" id="toggle-social">
+    <label for="toggle-social" class="social-toggle">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </label>
+    <div class="social-links">
+      <a href="https://wa.me/542291515022" target="_blank" title="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/va_tecnica/" target="_blank" class="instagram" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61581236796815" target="_blank" class="facebook" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
