@@ -62,48 +62,43 @@
     /* ===== Menú flotante redes ===== */
     .social-menu {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
       z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    /* Botón principal de WhatsApp */
-    .whatsapp-main {
+    /* Botón principal */
+    .social-toggle {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #25D366;
-      width: 60px;
-      height: 60px;
+      background: #222;
+      color: #fff;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       cursor: pointer;
-      transition: transform 0.2s;
+      font-size: 26px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s;
     }
 
-    .whatsapp-main img {
-      width: 32px;
-      height: 32px;
+    .social-toggle:hover {
+      background: #444;
     }
 
-    .whatsapp-main:hover {
-      transform: scale(1.1);
-    }
-
-    /* Esconder checkbox */
+    /* Esconder el checkbox */
     #toggle-social {
       display: none;
     }
 
-    /* Redes ocultas */
+    /* Links sociales ocultos */
     .social-links {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 10px;
+      margin-top: 10px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease;
@@ -120,7 +115,7 @@
       align-items: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateX(50px);
       transition: all 0.3s ease;
     }
 
@@ -129,19 +124,20 @@
       height: 26px;
     }
 
-    /* Mostrar redes cuando está activo */
+    /* Cuando el menú está activo */
     #toggle-social:checked ~ .social-links {
-      max-height: 200px;
+      max-height: 500px;
     }
 
     #toggle-social:checked ~ .social-links a {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
 
     /* Efecto escalonado */
     .social-links a:nth-child(1) { transition-delay: 0.1s; }
     .social-links a:nth-child(2) { transition-delay: 0.2s; }
+    .social-links a:nth-child(3) { transition-delay: 0.3s; }
   </style>
 </head>
 <body>
@@ -174,13 +170,15 @@
     <p>&copy; 2025 V.A. Técnica - Servicio Técnico en Mar del Plata</p>
   </footer>
 
-  <!-- ===== Menú flotante ===== -->
+  <!-- ===== Menú flotante con redes ===== -->
   <div class="social-menu">
-    <!-- Checkbox para mostrar redes -->
     <input type="checkbox" id="toggle-social">
+    <label for="toggle-social" class="social-toggle">☰</label>
 
-    <!-- Redes que aparecen después -->
     <div class="social-links">
+      <a href="https://wa.me/5492234567890" target="_blank" class="whatsapp" title="WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
       <a href="https://www.instagram.com/va_tecnica/" target="_blank" class="instagram" title="Instagram">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
       </a>
@@ -188,13 +186,6 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
       </a>
     </div>
-
-    <!-- Botón principal de WhatsApp -->
-    <label for="toggle-social" class="whatsapp-main">
-      <a href="https://wa.me/5492234567890" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-      </a>
-    </label>
   </div>
 </body>
 </html>
