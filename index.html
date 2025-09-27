@@ -104,15 +104,14 @@
     }
     .marcas img {
       width: 70px;
-      height: auto;
+      height: 70px;
       transition: transform 0.3s;
-      filter: none;
       object-fit: contain;
+      background: transparent;
     }
     .marcas img:hover {
       transform: scale(1.15);
     }
-
     /* Botonera flotante (columna derecha) */
     .float-buttons {
       position: fixed;
@@ -132,23 +131,24 @@
       align-items: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       transition: 0.3s;
+      overflow: hidden;
     }
     .float-buttons a img {
       width: 28px;
       height: 28px;
+      display: block;
     }
     .float-buttons a:hover {
       transform: scale(1.15);
       filter: brightness(1.2);
     }
     .whatsapp { background: #25d366; }
-    .maps { background: #4285F4; }
+    .maps { background: #ffffff00; } /* dejamos transparente para que el icono de maps se vea natural */
     .instagram { background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
     .facebook { background: #1877f2; }
-
     @media (max-width: 480px) {
       .card { padding: 20px; max-width: 95%; }
-      .marcas img { width: 56px; }
+      .marcas img { width: 56px; height: 56px; }
       .float-buttons a { width: 48px; height: 48px; }
       .float-buttons a img { width: 24px; height: 24px; }
     }
@@ -163,7 +163,8 @@
     <div class="info">
       <p><strong>Dirección:</strong><br> 
         <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">
-          <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Ubicación en Google Maps">
+          <!-- google maps pequeño al lado de la dirección -->
+          <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación en Google Maps" style="height:18px; vertical-align:middle; margin-right:6px;">
           Falucho 2078, Piso 2, Depto B - Mar del Plata
         </a>
       </p>
@@ -192,24 +193,59 @@
     </footer>
   </div>
 
+  <!-- Sección de marcas -->
   <div class="marcas-section">
     <h2>Marcas que Reparamos</h2>
-    <!-- ... (igual que antes, con las marcas de celulares, notebooks y gamer) ... -->
+
+    <div class="categoria">
+      <h3>Celulares</h3>
+      <div class="marcas">
+        <!-- PNG/SVG confiables para celulares -->
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882700.png" alt="Samsung">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732245.png" alt="Apple iPhone">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882729.png" alt="Motorola">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882747.png" alt="Xiaomi">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882708.png" alt="Huawei">
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Notebooks</h3>
+      <div class="marcas">
+        <!-- PNG/SVG confiables para notebooks -->
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882738.png" alt="HP">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882735.png" alt="Dell">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882737.png" alt="Asus">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882739.png" alt="Lenovo">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882736.png" alt="Acer">
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>División Gamer</h3>
+      <div class="marcas">
+        <!-- PNG/SVG confiables para gamer -->
+        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="MSI">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882742.png" alt="Alienware">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882743.png" alt="ASUS ROG">
+        <img src="https://cdn-icons-png.flaticon.com/512/882/882741.png" alt="Gigabyte">
+      </div>
+    </div>
   </div>
 
   <!-- Botonera flotante derecha -->
   <div class="float-buttons">
-    <a href="https://wa.me/542291515022" class="whatsapp" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <a href="https://wa.me/542291515022" class="whatsapp" target="_blank" aria-label="WhatsApp - Contacto">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
-    <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" class="maps" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Google_Maps_Icon.svg" alt="Google Maps">
+    <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" class="maps" target="_blank" aria-label="Google Maps">
+      <img src="https://img.icons8.com/color/48/google-maps.png" alt="Google Maps">
     </a>
-    <a href="https://www.instagram.com/va_tecnica/" class="instagram" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    <a href="https://www.instagram.com/va_tecnica/" class="instagram" target="_blank" aria-label="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
     </a>
-    <a href="https://www.facebook.com/profile.php?id=61581236796815" class="facebook" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+    <a href="https://www.facebook.com/profile.php?id=61581236796815" class="facebook" target="_blank" aria-label="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
     </a>
   </div>
 </body>
