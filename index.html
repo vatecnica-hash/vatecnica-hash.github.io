@@ -3,182 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Servicio técnico V.A. Técnica en Mar del Plata: reparación de celulares, notebooks y más. Atención rápida y profesional.">
-  <title>V.A. Técnica - Reparación de Celulares y Notebooks en Mar del Plata</title>
+  <title>V.A Técnica - Reparación de Celulares y Notebooks en Mar del Plata</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
       color: #333;
     }
 
     header {
       background: #222;
       color: #fff;
-      padding: 20px;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    main {
+      padding: 2rem;
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-    }
-
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #000;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 20px 0;
-      background: #25D366;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .cta:hover {
-      background: #1ebe5d;
-    }
-
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 30px;
-    }
-
-    /* ===== Menú flotante redes ===== */
+    /* --- Botón WhatsApp flotante con menú --- */
     .social-menu {
       position: fixed;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
+      bottom: 20px;
+      right: 20px;
       z-index: 1000;
     }
 
-    /* Botón principal */
-    .social-toggle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #222;
-      color: #fff;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 26px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background 0.3s;
-    }
-
-    .social-toggle:hover {
-      background: #444;
-    }
-
-    /* Esconder el checkbox */
     #toggle-social {
       display: none;
     }
 
-    /* Links sociales ocultos */
+    .social-toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #25d366; /* Verde WhatsApp */
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .social-toggle img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .social-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Contenedor oculto redes sociales */
     .social-links {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 10px;
+      margin-bottom: 10px;
+      opacity: 0;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease;
+      transition: all 0.3s ease;
     }
 
     .social-links a {
-      margin: 8px 0;
+      margin: 6px 0;
       width: 50px;
       height: 50px;
-      background: #fff;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
+      background: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .social-links img {
-      width: 26px;
-      height: 26px;
+    .social-links a img {
+      width: 24px;
+      height: 24px;
     }
 
-    /* Cuando el menú está activo */
+    .social-links a:hover {
+      transform: scale(1.15);
+    }
+
+    /* Mostrar redes cuando el toggle está activo */
     #toggle-social:checked ~ .social-links {
-      max-height: 500px;
-    }
-
-    #toggle-social:checked ~ .social-links a {
       opacity: 1;
-      transform: translateX(0);
+      max-height: 200px;
     }
 
-    /* Efecto escalonado */
-    .social-links a:nth-child(1) { transition-delay: 0.1s; }
-    .social-links a:nth-child(2) { transition-delay: 0.2s; }
-    .social-links a:nth-child(3) { transition-delay: 0.3s; }
+    /* Colores de cada red */
+    .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .facebook { background: #1877f2; }
+
+    /* Adaptar a escritorio: barra lateral izquierda fija */
+    @media (min-width: 768px) {
+      .social-menu {
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        left: 20px;
+        transform: translateY(-50%);
+      }
+
+      .social-toggle {
+        display: none;
+      }
+
+      .social-links {
+        opacity: 1;
+        max-height: none;
+        margin: 0;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>V.A. Técnica</h1>
-    <p>Reparación de Celulares y Notebooks en <span class="highlight">Mar del Plata</span></p>
+    <h1>V.A Técnica</h1>
+    <p>Reparación de Celulares y Notebooks en Mar del Plata</p>
   </header>
 
-  <div class="container">
-    <h2>Servicio Técnico Especializado</h2>
-    <p>
-      En <span class="highlight">V.A. Técnica</span> ofrecemos <span class="highlight">reparación de celulares</span>, 
-      <span class="highlight">arreglo de notebooks</span> y servicio técnico rápido en 
-      <span class="highlight">Mar del Plata</span>. 
-      Brindamos soluciones confiables con repuestos de calidad y garantía en cada reparación.
-    </p>
+  <main>
+    <h2>Servicio Técnico Profesional</h2>
+    <p>Atendemos todas las marcas y modelos, con repuestos originales y garantía de calidad.</p>
+    <p><b>📍 Dirección:</b> <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank">Mar del Plata</a></p>
+  </main>
 
-    <a href="https://wa.me/5492234567890" class="cta" target="_blank">💬 Contáctanos por WhatsApp</a>
-
-    <h2>¿Dónde estamos?</h2>
-    <p>
-      📍 Estamos en Mar del Plata.  
-      <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank" class="highlight">
-        Ver ubicación en Google Maps
-      </a>
-    </p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 V.A. Técnica - Servicio Técnico en Mar del Plata</p>
-  </footer>
-
-  <!-- ===== Menú flotante con redes ===== -->
+  <!-- Botón WhatsApp + redes -->
   <div class="social-menu">
     <input type="checkbox" id="toggle-social">
-    <label for="toggle-social" class="social-toggle">☰</label>
+    
+    <!-- Botón WhatsApp -->
+    <label for="toggle-social" class="social-toggle">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </label>
 
+    <!-- Redes sociales ocultas en móvil -->
     <div class="social-links">
-      <a href="https://wa.me/5492234567890" target="_blank" class="whatsapp" title="WhatsApp">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-      </a>
       <a href="https://www.instagram.com/va_tecnica/" target="_blank" class="instagram" title="Instagram">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
       </a>
