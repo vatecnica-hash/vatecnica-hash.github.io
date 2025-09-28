@@ -18,7 +18,7 @@
       align-items: center;
       min-height: 100vh;
       flex-direction: column;
-      padding-bottom: 120px;
+      padding-bottom: 150px; /* Aumentado para el footer */
       position: relative;
     }
     .card {
@@ -279,6 +279,22 @@
         <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" alt="Razer" title="Razer" data-local="logos/razer.png">
       </div>
     </div>
+
+    <!-- NUEVA SECCIÓN: Consolas de Videojuegos -->
+    <div class="categoria">
+      <h3>Consolas de Videojuegos</h3>
+      <div class="marcas">
+        <!-- Logos de consolas con respaldo local -->
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/PlayStation-Logo.png" alt="PlayStation" title="PlayStation" data-local="logos/playstation.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Xbox-Logo.png" alt="Xbox" title="Xbox" data-local="logos/xbox.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Logo.png" alt="Nintendo" title="Nintendo" data-local="logos/nintendo.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Switch-Logo.png" alt="Nintendo Switch" title="Nintendo Switch" data-local="logos/switch.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Sega-Logo.png" alt="Sega" title="Sega" data-local="logos/sega.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Steam-Logo.png" alt="Steam" title="Steam" data-local="logos/steam.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Oculus-Logo.png" alt="Oculus" title="Oculus" data-local="logos/oculus.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Valve-Logo.png" alt="Valve" title="Valve" data-local="logos/valve.png">
+      </div>
+    </div>
   </div>
 
   <!-- Footer fijo en la parte inferior -->
@@ -349,33 +365,6 @@
 
       // Cargar reseñas después de un breve delay (simulando carga de API)
       setTimeout(cargarReseñasGoogle, 1000);
-
-      // Para implementación real con Google Places API:
-      /*
-      function cargarReseñasReales() {
-        // Necesitarías obtener un API Key de Google Cloud Platform
-        // y habilitar la Places API
-        const apiKey = 'TU_API_KEY_AQUI';
-        const placeId = 'ID_DEL_NEGOCIO_EN_GOOGLE'; // Obtener de Google My Business
-        
-        fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total&key=${apiKey}`)
-          .then(response => response.json())
-          .then(data => {
-            if (data.result) {
-              const rating = data.result.rating;
-              const totalReseñas = data.result.user_ratings_total;
-              const contador = document.getElementById('contador-reseñas');
-              if (contador) {
-                contador.innerHTML = `(${rating} / 5) - ${totalReseñas} reseñas<br><small>Actualizado: ${new Date().toLocaleDateString('es-ES')}</small>`;
-              }
-            }
-          })
-          .catch(error => {
-            console.error('Error cargando reseñas:', error);
-            document.getElementById('contador-reseñas').innerHTML = '(5.0 / 5) - 163 reseñas';
-          });
-      }
-      */
     });
   </script>
 </body>
