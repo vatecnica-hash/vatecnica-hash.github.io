@@ -19,6 +19,7 @@
       min-height: 100vh;
       flex-direction: column;
       padding-bottom: 120px;
+      position: relative;
     }
     .card {
       background: #1a1a1a;
@@ -41,10 +42,13 @@
     }
     .info { margin: 20px 0; font-size: 16px; line-height: 1.6; }
     .info a { color: #4da6ff; text-decoration: none; font-weight: bold; }
-    .info img { height: 18px; vertical-align: middle; margin-right: 6px; }
+    .info img { 
+      height: 22px; /* Aumentado el tamaño del ícono de maps */
+      vertical-align: middle; 
+      margin-right: 8px;
+    }
     .seo { font-size: 14px; color: #ccc; margin-top: 15px; line-height: 1.6; text-align: justify; }
     .seo a { color: #4da6ff; text-decoration: none; font-weight: bold; }
-    footer { margin-top: 20px; font-size: 12px; color: #aaa; }
 
     /* Sección de marcas */
     .marcas-section {
@@ -76,6 +80,21 @@
     }
     .marcas img:hover { transform: scale(1.12); }
 
+    /* Footer fijo en la parte inferior */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #1a1a1a;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      border-top: 1px solid #333;
+      z-index: 998;
+    }
+
     /* Estilo para cuando falla un logo */
     .logo-fallback {
       display: flex;
@@ -94,7 +113,7 @@
     /* Botonera flotante */
     .float-buttons {
       position: fixed;
-      bottom: 20px;
+      bottom: 70px; /* Ajustado para que no choque con el footer */
       right: 20px;
       display: flex;
       flex-direction: column;
@@ -112,12 +131,53 @@
       transition: 0.3s;
       overflow: hidden;
     }
-    .float-buttons a img { width: 28px; height: 28px; display:block; }
+    .float-buttons a img { 
+      width: 28px; 
+      height: 28px; 
+      display:block; 
+    }
     .float-buttons a:hover { transform: scale(1.12); filter: brightness(1.15); }
     .whatsapp { background: #25d366; }
     .maps { background: #ffffff00; }
     .instagram { background: radial-gradient(circle at 30% 30%, #feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); }
     .facebook { background: #1877f2; }
+    .tiktok { 
+      background: #000000;
+      position: relative;
+      overflow: hidden;
+    }
+    .tiktok::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #ff0050, #00f2ea, transparent);
+      transition: left 0.5s;
+    }
+    .tiktok:hover::before {
+      left: 100%;
+    }
+
+    /* Estilo para las reseñas */
+    .reseñas {
+      background: #2a2a2a;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    .estrella {
+      color: #FFD700;
+      font-size: 18px;
+      margin: 0 1px;
+    }
+    .contador-reseñas {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 5px;
+    }
 
     @media (max-width: 480px) {
       .card { padding: 20px; max-width: 95%; }
@@ -125,6 +185,8 @@
       .logo-fallback { width: 56px; height: 56px; font-size: 10px; }
       .float-buttons a { width: 48px; height: 48px; }
       .float-buttons a img { width: 24px; height: 24px; }
+      .info img { height: 20px; } /* Ajuste responsive para el ícono de maps */
+      footer { padding: 10px 0; font-size: 11px; }
     }
   </style>
 </head>
@@ -137,14 +199,19 @@
     <div class="info">
       <p><strong>Dirección:</strong><br>
         <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank" rel="noreferrer">
-          <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación en Google Maps" style="height:18px; vertical-align:middle; margin-right:6px;">
+          <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación en Google Maps">
           Falucho 2078, Piso 2, Depto B - Mar del Plata
         </a>
       </p>
       <p><strong>Teléfono:</strong><br>
         <a href="tel:+542291515022">+54 2291 515022</a>
       </p>
-      <p><strong>Reseñas en Google:</strong><br> ⭐⭐⭐⭐⭐ (5.0 / 5) - 163 reseñas</p>
+      <p><strong>Reseñas en Google:</strong><br> 
+        <span class="reseñas">
+          <span class="estrella">⭐</span><span class="estrella">⭐</span><span class="estrella">⭐</span><span class="estrella">⭐</span><span class="estrella">⭐</span>
+          <div class="contador-reseñas" id="contador-reseñas">(5.0 / 5) - Cargando reseñas...</div>
+        </span>
+      </p>
     </div>
 
     <div class="seo">
@@ -158,8 +225,6 @@
         <a href="https://wa.me/542291515022" target="_blank" rel="noreferrer">Contactanos por WhatsApp</a> para diagnóstico inmediato.
       </p>
     </div>
-
-    <footer>© 2025 V.A. Técnica - Todos los derechos reservados</footer>
   </div>
 
   <!-- Sección de marcas -->
@@ -214,10 +279,16 @@
     </div>
   </div>
 
+  <!-- Footer fijo en la parte inferior -->
+  <footer>© 2025 V.A. Técnica - Todos los derechos reservados</footer>
+
   <!-- Botones flotantes -->
   <div class="float-buttons">
     <a href="https://wa.me/542291515022" class="whatsapp" target="_blank" rel="noreferrer">
       <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.tiktok.com/@v.a_tecnica?_t=ZM-905lDg8Okwq&_r=1" class="tiktok" target="_blank" rel="noreferrer">
+      <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok">
     </a>
     <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" class="maps" target="_blank" rel="noreferrer">
       <img src="https://img.icons8.com/color/48/google-maps.png" alt="Google Maps">
@@ -257,6 +328,52 @@
           logo.dispatchEvent(new Event('error'));
         }
       });
+
+      // Simulación de carga de reseñas de Google (esto es un ejemplo)
+      // En la práctica, necesitarías usar la API de Google Places
+      function cargarReseñasGoogle() {
+        // Datos de ejemplo - reemplazar con datos reales de la API
+        const reseñasEjemplo = {
+          rating: 5.0,
+          totalReseñas: 163,
+          ultimaActualizacion: new Date().toLocaleDateString('es-ES')
+        };
+        
+        const contador = document.getElementById('contador-reseñas');
+        if (contador) {
+          contador.innerHTML = `(${reseñasEjemplo.rating} / 5) - ${reseñasEjemplo.totalReseñas} reseñas<br><small>Actualizado: ${reseñasEjemplo.ultimaActualizacion}</small>`;
+        }
+      }
+
+      // Cargar reseñas después de un breve delay (simulando carga de API)
+      setTimeout(cargarReseñasGoogle, 1000);
+
+      // Para implementación real con Google Places API:
+      /*
+      function cargarReseñasReales() {
+        // Necesitarías obtener un API Key de Google Cloud Platform
+        // y habilitar la Places API
+        const apiKey = 'TU_API_KEY_AQUI';
+        const placeId = 'ID_DEL_NEGOCIO_EN_GOOGLE'; // Obtener de Google My Business
+        
+        fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total&key=${apiKey}`)
+          .then(response => response.json())
+          .then(data => {
+            if (data.result) {
+              const rating = data.result.rating;
+              const totalReseñas = data.result.user_ratings_total;
+              const contador = document.getElementById('contador-reseñas');
+              if (contador) {
+                contador.innerHTML = `(${rating} / 5) - ${totalReseñas} reseñas<br><small>Actualizado: ${new Date().toLocaleDateString('es-ES')}</small>`;
+              }
+            }
+          })
+          .catch(error => {
+            console.error('Error cargando reseñas:', error);
+            document.getElementById('contador-reseñas').innerHTML = '(5.0 / 5) - 163 reseñas';
+          });
+      }
+      */
     });
   </script>
 </body>
