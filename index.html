@@ -8,77 +8,141 @@
   <meta name="keywords" content="reparación de celulares Mar del Plata, arreglo de notebooks, servicio técnico, cambio de pantalla, cambio de batería, arreglo de celular cerca, técnico de notebooks, mantenimiento de celulares, reparación urgente Mar del Plata">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
+    :root {
+      /* COLOR AZUL OSCURO ELEGANTE */
+      --color-fondo: #0f172a;
+      --color-card: #1e293b;
+      --color-accent: #3b82f6;
+      --color-texto: #f8fafc;
+      --color-borde: rgba(255, 255, 255, 0.1);
+      --color-secundario: #334155;
+    }
+    
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0a0a0a;
-      color: #f5f5f5;
+      background: var(--color-fondo);
+      color: var(--color-texto);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       flex-direction: column;
-      padding-bottom: 150px; /* Aumentado para el footer */
+      padding-bottom: 150px;
       position: relative;
     }
     .card {
-      background: #1a1a1a;
+      background: var(--color-card);
       padding: 30px 20px;
       border-radius: 20px;
       text-align: center;
       max-width: 420px;
       width: 90%;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
       margin-bottom: 30px;
+      border: 1px solid var(--color-borde);
+      backdrop-filter: blur(10px);
     }
     .card img {
       max-width: 150px;
       margin-bottom: 15px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
     }
     .card h1 {
       margin: 10px 0;
-      font-size: 24px;
-      color: #4da6ff;
+      font-size: 26px;
+      color: var(--color-accent);
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-    .info { margin: 20px 0; font-size: 16px; line-height: 1.6; }
-    .info a { color: #4da6ff; text-decoration: none; font-weight: bold; }
+    .info { 
+      margin: 20px 0; 
+      font-size: 16px; 
+      line-height: 1.6; 
+    }
+    .info a { 
+      color: var(--color-accent); 
+      text-decoration: none; 
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .info a:hover {
+      color: #60a5fa;
+    }
     .info img { 
-      height: 22px; /* Aumentado el tamaño del ícono de maps */
+      height: 22px;
       vertical-align: middle; 
       margin-right: 8px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
-    .seo { font-size: 14px; color: #ccc; margin-top: 15px; line-height: 1.6; text-align: justify; }
-    .seo a { color: #4da6ff; text-decoration: none; font-weight: bold; }
+    .seo { 
+      font-size: 14px; 
+      color: #cbd5e1; 
+      margin-top: 15px; 
+      line-height: 1.6; 
+      text-align: justify; 
+    }
+    .seo a { 
+      color: var(--color-accent); 
+      text-decoration: none; 
+      font-weight: 600;
+    }
+    .seo a:hover {
+      color: #60a5fa;
+    }
 
     /* Sección de marcas */
     .marcas-section {
-      background: #1a1a1a;
-      padding: 25px 20px;
+      background: var(--color-card);
+      padding: 30px 25px;
       border-radius: 20px;
       max-width: 900px;
       width: 95%;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
       margin: 20px 0;
+      border: 1px solid var(--color-borde);
+      backdrop-filter: blur(10px);
     }
-    .marcas-section h2 { text-align: center; margin-bottom: 20px; color: #4da6ff; }
-    .categoria { margin: 20px 0; }
-    .categoria h3 { font-size: 18px; margin-bottom: 15px; color: #f5f5f5; text-align: center; }
+    .marcas-section h2 { 
+      text-align: center; 
+      margin-bottom: 25px; 
+      color: var(--color-accent); 
+      font-size: 28px;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .categoria { margin: 25px 0; }
+    .categoria h3 { 
+      font-size: 20px; 
+      margin-bottom: 20px; 
+      color: var(--color-texto); 
+      text-align: center; 
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
     .marcas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+      gap: 25px;
       justify-items: center;
       align-items: center;
     }
     .marcas img {
-      width: 70px;
-      height: 70px;
-      transition: transform 0.25s;
+      width: 75px;
+      height: 75px;
+      transition: all 0.3s ease;
       object-fit: contain;
       background: transparent;
-      filter: brightness(1);
+      filter: brightness(1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+      padding: 8px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
     }
-    .marcas img:hover { transform: scale(1.12); }
+    .marcas img:hover { 
+      transform: scale(1.15); 
+      filter: brightness(1.2) drop-shadow(0 6px 12px rgba(59, 130, 246, 0.3));
+      background: rgba(59, 130, 246, 0.1);
+    }
 
     /* Footer fijo en la parte inferior */
     footer {
@@ -86,13 +150,14 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #1a1a1a;
-      padding: 15px 0;
+      background: var(--color-card);
+      padding: 18px 0;
       text-align: center;
-      font-size: 12px;
-      color: #aaa;
-      border-top: 1px solid #333;
+      font-size: 13px;
+      color: #94a3b8;
+      border-top: 1px solid var(--color-borde);
       z-index: 998;
+      backdrop-filter: blur(10px);
     }
 
     /* Estilo para cuando falla un logo */
@@ -100,43 +165,50 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 70px;
-      height: 70px;
-      background: #2a2a2a;
-      border-radius: 8px;
+      width: 75px;
+      height: 75px;
+      background: var(--color-secundario);
+      border-radius: 12px;
       color: #fff;
-      font-size: 12px;
+      font-size: 11px;
       text-align: center;
-      font-weight: bold;
+      font-weight: 600;
+      border: 1px solid var(--color-borde);
     }
 
     /* Botonera flotante */
     .float-buttons {
       position: fixed;
-      bottom: 70px; /* Ajustado para que no choque con el footer */
-      right: 20px;
+      bottom: 80px;
+      right: 25px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 18px;
       z-index: 999;
     }
     .float-buttons a {
-      width: 55px;
-      height: 55px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      transition: 0.3s;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
       overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1);
     }
     .float-buttons a img { 
-      width: 28px; 
-      height: 28px; 
+      width: 30px; 
+      height: 30px; 
       display:block; 
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
-    .float-buttons a:hover { transform: scale(1.12); filter: brightness(1.15); }
+    .float-buttons a:hover { 
+      transform: scale(1.15); 
+      filter: brightness(1.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
     .whatsapp { background: #25d366; }
     .maps { background: #ffffff00; }
     .instagram { background: radial-gradient(circle at 30% 30%, #feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); }
@@ -162,31 +234,66 @@
 
     /* Estilo para las reseñas */
     .reseñas {
-      background: #2a2a2a;
-      padding: 10px 15px;
-      border-radius: 10px;
-      margin: 10px 0;
+      background: var(--color-secundario);
+      padding: 12px 18px;
+      border-radius: 12px;
+      margin: 12px 0;
       display: inline-block;
+      border: 1px solid var(--color-borde);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .estrella {
       color: #FFD700;
-      font-size: 18px;
-      margin: 0 1px;
+      font-size: 20px;
+      margin: 0 2px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     .contador-reseñas {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 5px;
+      font-size: 15px;
+      color: #cbd5e1;
+      margin-top: 6px;
+      font-weight: 500;
     }
 
     @media (max-width: 480px) {
-      .card { padding: 20px; max-width: 95%; }
-      .marcas img { width: 56px; height: 56px; }
-      .logo-fallback { width: 56px; height: 56px; font-size: 10px; }
-      .float-buttons a { width: 48px; height: 48px; }
-      .float-buttons a img { width: 24px; height: 24px; }
-      .info img { height: 20px; } /* Ajuste responsive para el ícono de maps */
-      footer { padding: 10px 0; font-size: 11px; }
+      .card { 
+        padding: 25px 15px; 
+        max-width: 95%; 
+        margin-bottom: 25px;
+      }
+      .marcas img { 
+        width: 60px; 
+        height: 60px; 
+      }
+      .logo-fallback { 
+        width: 60px; 
+        height: 60px; 
+        font-size: 10px; 
+      }
+      .float-buttons { 
+        bottom: 70px;
+        right: 15px;
+      }
+      .float-buttons a { 
+        width: 50px; 
+        height: 50px; 
+      }
+      .float-buttons a img { 
+        width: 26px; 
+        height: 26px; 
+      }
+      .info img { height: 20px; }
+      footer { 
+        padding: 15px 0; 
+        font-size: 12px; 
+      }
+      .marcas-section {
+        padding: 25px 15px;
+      }
+      .marcas {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      }
     }
   </style>
 </head>
@@ -234,7 +341,6 @@
     <div class="categoria">
       <h3>Celulares</h3>
       <div class="marcas">
-        <!-- Logos de celulares con respaldo local (sin Infinix) -->
         <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" title="Apple (iPhone)" data-local="logos/apple.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Samsung" title="Samsung" data-local="logos/samsung.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/04/Xiaomi-Logo.png" alt="Xiaomi" title="Xiaomi" data-local="logos/xiaomi.png">
@@ -250,7 +356,6 @@
     <div class="categoria">
       <h3>Notebooks</h3>
       <div class="marcas">
-        <!-- Logos de notebooks con respaldo local (sin Compaq) -->
         <img src="https://logos-world.net/wp-content/uploads/2020/07/Asus-Logo.png" alt="Asus" title="Asus" data-local="logos/asus.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/07/Acer-Logo.png" alt="Acer" title="Acer" data-local="logos/acer.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/07/Dell-Logo.png" alt="Dell" title="Dell" data-local="logos/dell.png">
@@ -266,7 +371,6 @@
     <div class="categoria">
       <h3>División Gamer</h3>
       <div class="marcas">
-        <!-- Logos de gaming con respaldo local -->
         <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-ROG-Logo.png" alt="ASUS ROG" title="ASUS ROG" data-local="logos/rog.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/04/Alienware-Logo.png" alt="Alienware" title="Alienware" data-local="logos/alienware.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/12/Lenovo-Legion-Logo.png" alt="Lenovo Legion" title="Lenovo Legion" data-local="logos/legion.png">
@@ -275,16 +379,13 @@
         <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="MSI Gaming" title="MSI Gaming" data-local="logos/msi.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/04/Acer-Predator-Logo.png" alt="Acer Predator" title="Acer Predator" data-local="logos/predator.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/04/Dell-G-Series-Logo.png" alt="Dell G Series" title="Dell G Series" data-local="logos/gseries.png">
-        <!-- Logo de Razer agregado -->
         <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" alt="Razer" title="Razer" data-local="logos/razer.png">
       </div>
     </div>
 
-    <!-- NUEVA SECCIÓN: Consolas de Videojuegos -->
     <div class="categoria">
       <h3>Consolas de Videojuegos</h3>
       <div class="marcas">
-        <!-- Logos de consolas con respaldo local -->
         <img src="https://logos-world.net/wp-content/uploads/2020/11/PlayStation-Logo.png" alt="PlayStation" title="PlayStation" data-local="logos/playstation.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/11/Xbox-Logo.png" alt="Xbox" title="Xbox" data-local="logos/xbox.png">
         <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Logo.png" alt="Nintendo" title="Nintendo" data-local="logos/nintendo.png">
@@ -297,10 +398,8 @@
     </div>
   </div>
 
-  <!-- Footer fijo en la parte inferior -->
   <footer>© 2025 V.A. Técnica - Todos los derechos reservados</footer>
 
-  <!-- Botones flotantes -->
   <div class="float-buttons">
     <a href="https://wa.me/542291515022" class="whatsapp" target="_blank" rel="noreferrer">
       <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
@@ -320,7 +419,6 @@
   </div>
 
   <script>
-    // Script para manejar logos que fallen al cargar
     document.addEventListener('DOMContentLoaded', function() {
       const logos = document.querySelectorAll('.marcas img');
       
@@ -328,11 +426,9 @@
         logo.addEventListener('error', function() {
           const localSrc = this.getAttribute('data-local');
           if (localSrc) {
-            // Intentar cargar desde local
             this.src = localSrc;
-            this.removeAttribute('data-local'); // Evitar bucle infinito
+            this.removeAttribute('data-local');
           } else {
-            // Si ya intentamos local y falló, mostrar fallback
             this.style.display = 'none';
             const fallback = document.createElement('div');
             fallback.className = 'logo-fallback';
@@ -341,16 +437,12 @@
           }
         });
         
-        // Verificar si la imagen ya falló al cargar
         if (!logo.complete || logo.naturalHeight === 0) {
           logo.dispatchEvent(new Event('error'));
         }
       });
 
-      // Simulación de carga de reseñas de Google (esto es un ejemplo)
-      // En la práctica, necesitarías usar la API de Google Places
       function cargarReseñasGoogle() {
-        // Datos de ejemplo - reemplazar con datos reales de la API
         const reseñasEjemplo = {
           rating: 5.0,
           totalReseñas: 163,
@@ -363,7 +455,6 @@
         }
       }
 
-      // Cargar reseñas después de un breve delay (simulando carga de API)
       setTimeout(cargarReseñasGoogle, 1000);
     });
   </script>
