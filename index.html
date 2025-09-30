@@ -91,6 +91,81 @@
       color: #60a5fa;
     }
 
+    /* NUEVA SECCIÓN DE RESEÑAS GOOGLE */
+    .google-reviews-section {
+      background: var(--color-card);
+      padding: 40px 25px;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 95%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      margin: 20px 0;
+      border: 1px solid var(--color-borde);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    .google-reviews-section h2 { 
+      text-align: center; 
+      margin-bottom: 30px; 
+      color: var(--color-accent); 
+      font-size: 32px;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .embed-container {
+      background: var(--color-secundario);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      border: 1px solid var(--color-borde);
+    }
+    .google-map-embed {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .review-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+    .review-button {
+      background: linear-gradient(45deg, #FFD700, #FFA000);
+      color: #333;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .review-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+      background: linear-gradient(45deg, #FFA000, #FFD700);
+    }
+    .review-stats {
+      background: var(--color-secundario);
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      border: 1px solid var(--color-borde);
+    }
+    .review-stats h3 {
+      color: var(--color-accent);
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
     /* Sección de marcas */
     .marcas-section {
       background: var(--color-card);
@@ -260,6 +335,18 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
       }
+      .google-map-embed {
+        height: 400px;
+      }
+      .review-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      .review-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
     }
 
     @media (max-width: 480px) {
@@ -300,6 +387,15 @@
       .marcas {
         gap: 15px;
       }
+      .google-reviews-section {
+        padding: 30px 15px;
+      }
+      .google-map-embed {
+        height: 350px;
+      }
+      .embed-container {
+        padding: 15px;
+      }
     }
   </style>
 </head>
@@ -311,7 +407,7 @@
 
     <div class="info">
       <p><strong>Dirección:</strong><br>
-        <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" target="_blank" rel="noreferrer">
+        <a href="https://maps.app.goo.gl/P2SbeYyTaVCNy7zH8" target="_blank" rel="noreferrer">
           <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación en Google Maps">
           Falucho 2078, Piso 2, Depto B - Mar del Plata
         </a>
@@ -337,6 +433,44 @@
       <p>
         <a href="https://wa.me/542291515022" target="_blank" rel="noreferrer">Contactanos por WhatsApp</a> para diagnóstico inmediato.
       </p>
+    </div>
+  </div>
+
+  <!-- NUEVA SECCIÓN DE RESEÑAS GOOGLE -->
+  <div class="google-reviews-section">
+    <h2>📝 Reseñas de Nuestros Clientes</h2>
+    
+    <div class="embed-container">
+      <iframe 
+        class="google-map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12573.457455126593!2d-57.5525604!3d-38.0059452!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584de6d13c93c17%3A0x6f4a8c42d2b8b5c5!2sFalucho%202078%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1727834207974!5m2!1ses!2sar"
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="review-stats">
+      <h3>🌟 Tu Opinión es Muy Importante para Nosotros</h3>
+      <p>Más de <strong>160 clientes satisfechos</strong> confían en nuestro servicio</p>
+    </div>
+
+    <div class="review-actions">
+      <a href="https://search.google.com/local/writereview?placeid=ChIJy9vL1x3JvJUR7FB6e3y7p6s" 
+         target="_blank" 
+         class="review-button">
+        ⭐ Dejar una Reseña
+      </a>
+      
+      <a href="https://g.page/r/CW9j8X5Z5Q5kEBM/review" 
+         target="_blank" 
+         class="review-button">
+        📝 Ver Todas las Reseñas
+      </a>
+    </div>
+
+    <div style="margin-top: 20px; color: #cbd5e1; font-size: 14px;">
+      <p>💡 <strong>Consejo:</strong> Haz clic en el mapa para ver todas nuestras reseñas y calificaciones en Google Maps</p>
     </div>
   </div>
 
@@ -414,7 +548,7 @@
     <a href="https://www.tiktok.com/@v.a_tecnica?_t=ZM-905lDg8Okwq&_r=1" class="tiktok" target="_blank" rel="noreferrer">
       <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok">
     </a>
-    <a href="https://maps.app.goo.gl/WLZBj6NEgwnUv9DJ8" class="maps" target="_blank" rel="noreferrer">
+    <a href="https://maps.app.goo.gl/P2SbeYyTaVCNy7zH8" class="maps" target="_blank" rel="noreferrer">
       <img src="https://img.icons8.com/color/48/google-maps.png" alt="Google Maps">
     </a>
     <a href="https://www.instagram.com/va_tecnica/" class="instagram" target="_blank" rel="noreferrer">
@@ -463,6 +597,14 @@
       }
 
       setTimeout(cargarReseñasGoogle, 1000);
+
+      // Efecto de carga para el embed de Google
+      const iframe = document.querySelector('.google-map-embed');
+      iframe.addEventListener('load', function() {
+        this.style.opacity = '1';
+      });
+      iframe.style.opacity = '0';
+      iframe.style.transition = 'opacity 0.5s ease';
     });
   </script>
 </body>
