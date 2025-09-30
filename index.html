@@ -648,23 +648,42 @@
         }
       });
 
-      // COMENTADO: Fragmento que mostraba 163 reseñas
-      /*
+      // ============================================
+      // CONFIGURACIÓN FÁCIL DE RESEÑAS - ¡MODIFICA AQUÍ!
+      // ============================================
+      const configReseñas = {
+        rating: 5.0,           // Cambia el rating (1.0 a 5.0)
+        totalReseñas: 163,     // Cambia el número de reseñas
+        mostrarActualizacion: true  // true = muestra fecha, false = no muestra
+      };
+      // ============================================
+
       function cargarReseñasGoogle() {
-        const reseñasEjemplo = {
-          rating: 5.0,
-          totalReseñas: 163,
-          ultimaActualizacion: new Date().toLocaleDateString('es-ES')
-        };
-        
         const contador = document.getElementById('contador-reseñas');
         if (contador) {
-          contador.innerHTML = `(${reseñasEjemplo.rating} / 5) - ${reseñasEjemplo.totalReseñas} reseñas<br><small>Actualizado: ${reseñasEjemplo.ultimaActualizacion}</small>`;
+          let textoReseñas = `(${configReseñas.rating} / 5) - ${configReseñas.totalReseñas} reseñas`;
+          
+          if (configReseñas.mostrarActualizacion) {
+            const ultimaActualizacion = new Date().toLocaleDateString('es-ES');
+            textoReseñas += `<br><small>Actualizado: ${ultimaActualizacion}</small>`;
+          }
+          
+          contador.innerHTML = textoReseñas;
         }
       }
 
-      setTimeout(cargarReseñasGoogle, 1000);
-      */
+      // También actualiza el texto en la sección de reseñas
+      function actualizarEstadisticasReseñas() {
+        const estadisticasElement = document.querySelector('.review-stats p');
+        if (estadisticasElement) {
+          estadisticasElement.innerHTML = `Más de <strong>${configReseñas.totalReseñas} clientes satisfechos</strong> confían en nuestro servicio`;
+        }
+      }
+
+      setTimeout(function() {
+        cargarReseñasGoogle();
+        actualizarEstadisticasReseñas();
+      }, 1000);
 
       // Efecto de carga para el embed de Google
       const iframe = document.querySelector('.google-map-embed');
