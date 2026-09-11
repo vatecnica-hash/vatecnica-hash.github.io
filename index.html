@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,6 +9,10 @@
   <meta name="description" content="Servicio técnico especializado en reparación de celulares, notebooks, PC Gamer y consolas PS5/Xbox en Mar del Plata. Repuestos originales, diagnóstico y garantía escrita.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vatecnica.com.ar/">
+
+  <!-- METADATOS OPTIMIZADOS PARA IA Y LLMs (PERPLEXITY, CHATGPT, GEMINI) -->
+  <meta name="llm-content" content="V.A. Técnica es un servicio técnico y laboratorio microelectrónico ubicado en Mar del Plata, Argentina. Especialistas en reparación de celulares, notebooks, consolas de videojuegos y PC Gamer. Atendido por Axel. Teléfono: +542291515022.">
+  <meta name="author" content="V.A. Técnica">
 
   <!-- GEO-TAGGING PARA SEO LOCAL (MAR DEL PLATA) -->
   <meta name="geo.region" content="AR-B">
@@ -25,12 +29,14 @@
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- DATOS ESTRUCTURADOS SCHEMA.ORG (SEO INVISIBLE PARA GOOGLE MAPS Y BUSCADOR) -->
+  <!-- DATOS ESTRUCTURADOS SCHEMA.ORG (SEO INVISIBLE PARA GOOGLE MAPS Y IA) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobilePhoneRepairStore",
+    "@id": "https://vatecnica.com.ar/#business",
     "name": "V.A. Técnica",
+    "url": "https://vatecnica.com.ar/",
     "image": "logo-va.png",
     "description": "Servicio técnico especializado en reparación de celulares, notebooks, consolas de videojuegos y PC Gamer en Mar del Plata.",
     "telephone": "+542291515022",
@@ -535,24 +541,24 @@
   </style>
 </head>
 <body>
-  <div class="card">
+  <main class="card" itemscope itemtype="https://schema.org/TechnicalService">
     <!-- LOGO CON EL ENLACE COMPARTIDO DE GOOGLE -->
     <a href="https://share.google/iiaopPtiFfl0sG5dD" target="_blank" rel="noreferrer" class="logo-link" title="V.A Técnica - Reparación de Celulares y Notebooks">
-      <img src="logo-va.png" alt="V.A. Técnica - Servicio Técnico Especializado en Reparación de Celulares y Notebooks en Mar del Plata" title="Abrir perfil de V.A. Técnica" class="logo-img">
+      <img src="logo-va.png" alt="V.A. Técnica - Servicio Técnico Especializado en Reparación de Celulares y Notebooks en Mar del Plata" title="Abrir perfil de V.A. Técnica" class="logo-img" itemprop="image">
     </a>
     
-    <h1>V.A. Técnica</h1>
+    <h1 itemprop="name">V.A. Técnica</h1>
     <p><strong>Servicio Técnico Especializado en Mar del Plata</strong></p>
 
-    <div class="info">
+    <address class="info" style="font-style: normal;">
       <p><strong>Ubicación del Taller:</strong><br>
-        <a href="https://maps.app.goo.gl/P2SbeYyTaVCNy7zH8" target="_blank" rel="noreferrer" title="Ver ubicación de V.A. Técnica en Google Maps">
+        <a href="https://maps.app.goo.gl/P2SbeYyTaVCNy7zH8" target="_blank" rel="noreferrer" title="Ver ubicación de V.A. Técnica en Google Maps" itemprop="hasMap">
           <img src="https://img.icons8.com/color/48/google-maps.png" alt="Ubicación V.A. Técnica en Google Maps Mar del Plata">
-         Mar del Plata, Buenos Aires, Argentina (CP 7600)
+         <span itemprop="addressLocality">Mar del Plata</span>, <span itemprop="addressRegion">Buenos Aires</span>, <span itemprop="addressCountry">Argentina</span> (CP 7600)
         </a>
       </p>
       <p><strong>Atención y WhatsApp:</strong><br>
-        <a href="tel:+542291515022" title="Llamar al servicio técnico V.A. Técnica">+54 2291 515022</a>
+        <a href="tel:+542291515022" title="Llamar al servicio técnico V.A. Técnica" itemprop="telephone">+54 2291 515022</a>
       </p>
       <p><strong>Calificación en Google Maps:</strong><br> 
         <span class="reseñas">
@@ -560,9 +566,9 @@
           <div class="contador-reseñas" id="contador-reseñas">(5.0 / 5) - Cargando opiniones de clientes...</div>
         </span>
       </p>
-    </div>
+    </address>
 
-    <div class="seo">
+    <article class="seo" itemprop="description">
       <p>
         En <strong>V.A. Técnica</strong> somos el laboratorio líder en <strong>reparación de celulares, arreglo de notebooks, consolas de videojuegos y computadoras gamer en Mar del Plata</strong>. Brindamos soporte técnico profesional, diagnóstico rápido, repuestos de alta calidad y <strong>garantía escrita</strong> en cada servicio.
       </p>
@@ -602,11 +608,11 @@
           💬 Consultar por WhatsApp
         </a>
       </p>
-    </div>
-  </div>
+    </article>
+  </main>
 
   <!-- SECCIÓN DE RESEÑAS GOOGLE -->
-  <div class="google-reviews-section">
+  <section class="google-reviews-section">
     <h2>📝 Opiniones de Nuestros Clientes en Mar del Plata</h2>
     
     <div class="embed-container">
@@ -644,10 +650,10 @@
     <div style="margin-top: 20px; color: #cbd5e1; font-size: 14px;">
       <p>💡 <strong>¿Buscás referencias?</strong> Hacé clic en el mapa para leer las opiniones y calificaciones de nuestros clientes en Google.</p>
     </div>
-  </div>
+  </section>
 
   <!-- SECCIÓN DE MARCAS Y EQUIPOS QUE REPARAMOS -->
-  <div class="marcas-section">
+  <section class="marcas-section">
     <h2>Marcas y Equipos que Reparamos</h2>
 
     <div class="categoria">
@@ -708,12 +714,12 @@
         <img src="https://logos-world.net/wp-content/uploads/2020/11/Valve-Logo.png" alt="Soporte técnico Valve" title="Soporte Valve" data-local="logos/valve.png" loading="lazy">
       </div>
     </div>
-  </div>
+  </section>
 
   <footer>© 2025 V.A. Técnica - Servicio Técnico en Mar del Plata - Todos los derechos reservados</footer>
 
   <!-- Botonera flotante -->
-  <div class="float-buttons">
+  <nav class="float-buttons" aria-label="Enlaces directos de contacto">
     <a href="https://wa.me/542291515022" class="whatsapp" target="_blank" rel="noreferrer" title="Contactar Servicio Técnico por WhatsApp">
       <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="Contacto WhatsApp V.A. Técnica">
     </a>
@@ -729,7 +735,7 @@
     <a href="https://www.facebook.com/profile.php?id=61581236796815" class="facebook" target="_blank" rel="noreferrer" title="Seguinos en Facebook">
       <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook V.A. Técnica">
     </a>
-  </div>
+  </nav>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
