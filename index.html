@@ -10,6 +10,12 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vatecnica.com.ar/">
 
+  <!-- GEO-TAGGING PARA SEO LOCAL (MAR DEL PLATA) -->
+  <meta name="geo.region" content="AR-B">
+  <meta name="geo.placename" content="Mar del Plata">
+  <meta name="geo.position" content="-38.00785;-57.54888">
+  <meta name="ICBM" content="-38.00785, -57.54888">
+
   <!-- OPEN GRAPH / METADATOS PARA REDES SOCIALES Y WHATSAPP -->
   <meta property="og:type" content="business.business">
   <meta property="og:title" content="V.A. Técnica - Servicio Técnico en Mar del Plata">
@@ -98,10 +104,10 @@
 
   <style>
     :root {
-      /* COLOR AZUL OSCURO ELEGANTE */
+      /* COLOR AZUL OSCURO ELEGANTE Y AZUL CLARO VIBRANTE */
       --color-fondo: #0f172a;
       --color-card: #1e293b;
-      --color-accent: #3b82f6;
+      --color-accent: #38bdf8; /* Azul claro / Celeste claro vibrante */
       --color-texto: #f8fafc;
       --color-borde: rgba(255, 255, 255, 0.1);
       --color-secundario: #334155;
@@ -132,23 +138,31 @@
       border: 1px solid var(--color-borde);
       backdrop-filter: blur(10px);
     }
-    .card img {
+
+    /* Estilo del enlace del Logo */
+    .logo-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+    .card img.logo-img {
       max-width: 180px; /* Logo más grande */
       margin-bottom: 15px;
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
       border-radius: 50%; /* Logo circular */
-      border: 4px solid var(--color-accent); /* Borde azul */
+      border: 4px solid var(--color-accent); /* Borde azul claro */
       padding: 8px;
       background: var(--color-secundario);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card img:hover {
+    .card img.logo-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
     }
+
+    /* Título 3 píxeles más grande (29px) */
     .card h1 {
       margin: 10px 0;
-      font-size: 26px;
+      font-size: 29px; 
       color: var(--color-accent);
       font-weight: 700;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -165,7 +179,7 @@
       transition: color 0.3s ease;
     }
     .info a:hover {
-      color: #60a5fa;
+      color: #7dd3fc;
     }
     .info img { 
       height: 22px;
@@ -186,7 +200,7 @@
       font-weight: 600;
     }
     .seo a:hover {
-      color: #60a5fa;
+      color: #7dd3fc;
     }
     .servicio-item {
       margin: 12px 0;
@@ -208,7 +222,7 @@
       margin: 8px 0;
     }
 
-    /* SECCIÓN DE RESEÑAS GOOGLE - SEGURA SIN API KEY */
+    /* SECCIÓN DE RESEÑAS GOOGLE */
     .google-reviews-section {
       background: var(--color-card);
       padding: 40px 25px;
@@ -332,11 +346,11 @@
     }
     .marcas img:hover { 
       transform: scale(1.15); 
-      filter: brightness(1.2) drop-shadow(0 6px 12px rgba(59, 130, 246, 0.3));
-      background: rgba(59, 130, 246, 0.1);
+      filter: brightness(1.2) drop-shadow(0 6px 12px rgba(56, 189, 248, 0.4));
+      background: rgba(56, 189, 248, 0.1);
     }
 
-    /* Footer fijo en la parte inferior */
+    /* Footer fijo */
     footer {
       position: fixed;
       bottom: 0;
@@ -352,7 +366,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Estilo para cuando falla un logo */
     .logo-fallback {
       display: flex;
       align-items: center;
@@ -424,7 +437,6 @@
       left: 100%;
     }
 
-    /* Estilo para las reseñas */
     .reseñas {
       background: var(--color-secundario);
       padding: 12px 18px;
@@ -464,8 +476,8 @@
         max-width: 300px;
         justify-content: center;
       }
-      .card img {
-        max-width: 150px; /* Un poco más pequeño en móviles */
+      .card img.logo-img {
+        max-width: 150px;
       }
     }
 
@@ -475,8 +487,8 @@
         max-width: 95%; 
         margin-bottom: 25px;
       }
-      .card img {
-        max-width: 130px; /* Aún más pequeño en móviles muy pequeños */
+      .card img.logo-img {
+        max-width: 130px;
       }
       .marcas img { 
         width: 60px; 
@@ -524,7 +536,11 @@
 </head>
 <body>
   <div class="card">
-    <img src="logo-va.png" alt="V.A. Técnica - Servicio Técnico Especializado en Reparación de Celulares y Notebooks en Mar del Plata" title="V.A. Técnica Mar del Plata">
+    <!-- LOGO CON EL ENLACE COMPARTIDO DE GOOGLE -->
+    <a href="https://share.google/iiaopPtiFfl0sG5dD" target="_blank" rel="noreferrer" class="logo-link" title="V.A Técnica - Reparación de Celulares y Notebooks">
+      <img src="logo-va.png" alt="V.A. Técnica - Servicio Técnico Especializado en Reparación de Celulares y Notebooks en Mar del Plata" title="Abrir perfil de V.A. Técnica" class="logo-img">
+    </a>
+    
     <h1>V.A. Técnica</h1>
     <p><strong>Servicio Técnico Especializado en Mar del Plata</strong></p>
 
@@ -570,7 +586,7 @@
       <div class="ventajas-lista">
         <strong>✨ ¿Por qué elegir V.A. Técnica en Mar del Plata?</strong>
         <ul>
-          <li>Presupuestos claros y transparente sin compromiso</li>
+          <li>Presupuestos claros y transparentes sin compromiso</li>
           <li>Repuestos originales y alternativos clase A</li>
           <li>Más de 10 años de experiencia técnica comprobable</li>
           <li>Atención personalizada y reparación express</li>
@@ -589,7 +605,7 @@
     </div>
   </div>
 
-  <!-- SECCIÓN DE RESEÑAS GOOGLE - OPTIMIZADA SEO -->
+  <!-- SECCIÓN DE RESEÑAS GOOGLE -->
   <div class="google-reviews-section">
     <h2>📝 Opiniones de Nuestros Clientes en Mar del Plata</h2>
     
@@ -637,59 +653,59 @@
     <div class="categoria">
       <h3>Reparación de Celulares por Marca</h3>
       <div class="marcas">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Reparación de iPhone en Mar del Plata" title="Reparación de iPhone" data-local="logos/apple.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Reparación de celulares Samsung en Mar del Plata" title="Reparación de Samsung" data-local="logos/samsung.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Xiaomi-Logo.png" alt="Reparación de celulares Xiaomi en Mar del Plata" title="Reparación de Xiaomi" data-local="logos/xiaomi.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/07/Motorola-Logo.png" alt="Reparación de celulares Motorola en Mar del Plata" title="Reparación de Motorola" data-local="logos/motorola.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Huawei-Logo.png" alt="Reparación de celulares Huawei" title="Reparación de Huawei" data-local="logos/huawei.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Oppo-Logo.png" alt="Reparación de celulares Oppo" title="Reparación de Oppo" data-local="logos/oppo.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/OnePlus-Logo.png" alt="Reparación de celulares OnePlus" title="Reparación de OnePlus" data-local="logos/oneplus.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/LG-Logo.png" alt="Reparación de celulares LG" title="Reparación de LG" data-local="logos/lg.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Nokia-Logo.png" alt="Reparación de celulares Nokia" title="Reparación de Nokia" data-local="logos/nokia.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Reparación de iPhone en Mar del Plata" title="Reparación de iPhone" data-local="logos/apple.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Reparación de celulares Samsung en Mar del Plata" title="Reparación de Samsung" data-local="logos/samsung.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Xiaomi-Logo.png" alt="Reparación de celulares Xiaomi en Mar del Plata" title="Reparación de Xiaomi" data-local="logos/xiaomi.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Motorola-Logo.png" alt="Reparación de celulares Motorola en Mar del Plata" title="Reparación de Motorola" data-local="logos/motorola.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Huawei-Logo.png" alt="Reparación de celulares Huawei" title="Reparación de Huawei" data-local="logos/huawei.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Oppo-Logo.png" alt="Reparación de celulares Oppo" title="Reparación de Oppo" data-local="logos/oppo.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/OnePlus-Logo.png" alt="Reparación de celulares OnePlus" title="Reparación de OnePlus" data-local="logos/oneplus.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/LG-Logo.png" alt="Reparación de celulares LG" title="Reparación de LG" data-local="logos/lg.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Nokia-Logo.png" alt="Reparación de celulares Nokia" title="Reparación de Nokia" data-local="logos/nokia.png" loading="lazy">
       </div>
     </div>
 
     <div class="categoria">
       <h3>Reparación de Notebooks por Marca</h3>
       <div class="marcas">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/HP-Logo.png" alt="Reparación de notebooks HP" title="Reparación de HP" data-local="logos/hp.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/07/Dell-Logo.png" alt="Reparación de notebooks Dell" title="Reparación de Dell" data-local="logos/dell.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Lenovo-Logo.png" alt="Reparación de notebooks Lenovo" title="Reparación de Lenovo" data-local="logos/lenovo.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/07/Asus-Logo.png" alt="Reparación de notebooks Asus" title="Reparación de Asus" data-local="logos/asus.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/07/Acer-Logo.png" alt="Reparación de notebooks Acer" title="Reparación de Acer" data-local="logos/acer.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Toshiba-Logo.png" alt="Reparación de notebooks Toshiba" title="Reparación de Toshiba" data-local="logos/toshiba.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Reparación de notebooks Samsung" title="Reparación de Notebooks Samsung" data-local="logos/samsung.png">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Bangho_logo.svg/1200px-Bangho_logo.svg.png" alt="Reparación de notebooks Banghó" title="Reparación de Banghó" data-local="logos/bangho.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="Reparación de notebooks MSI" title="Reparación de MSI" data-local="logos/msi.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/HP-Logo.png" alt="Reparación de notebooks HP" title="Reparación de HP" data-local="logos/hp.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Dell-Logo.png" alt="Reparación de notebooks Dell" title="Reparación de Dell" data-local="logos/dell.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Lenovo-Logo.png" alt="Reparación de notebooks Lenovo" title="Reparación de Lenovo" data-local="logos/lenovo.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Asus-Logo.png" alt="Reparación de notebooks Asus" title="Reparación de Asus" data-local="logos/asus.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/07/Acer-Logo.png" alt="Reparación de notebooks Acer" title="Reparación de Acer" data-local="logos/acer.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Toshiba-Logo.png" alt="Reparación de notebooks Toshiba" title="Reparación de Toshiba" data-local="logos/toshiba.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Reparación de notebooks Samsung" title="Reparación de Notebooks Samsung" data-local="logos/samsung.png" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Bangho_logo.svg/1200px-Bangho_logo.svg.png" alt="Reparación de notebooks Banghó" title="Reparación de Banghó" data-local="logos/bangho.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="Reparación de notebooks MSI" title="Reparación de MSI" data-local="logos/msi.png" loading="lazy">
       </div>
     </div>
 
     <div class="categoria">
       <h3>Soporte Técnico Informático Gamer</h3>
       <div class="marcas">
-        <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-ROG-Logo.png" alt="Mantenimiento ASUS ROG" title="Soporte ASUS ROG" data-local="logos/rog.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Alienware-Logo.png" alt="Reparación Alienware" title="Soporte Alienware" data-local="logos/alienware.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/12/Lenovo-Legion-Logo.png" alt="Reparación Lenovo Legion" title="Soporte Lenovo Legion" data-local="logos/legion.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/HP-Omen-Logo.png" alt="Reparación HP Omen" title="Soporte HP Omen" data-local="logos/omen.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-TUF-Logo.png" alt="Reparación ASUS TUF" title="Soporte ASUS TUF" data-local="logos/tuf.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="Reparación PC MSI Gaming" title="Soporte MSI Gaming" data-local="logos/msi.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Acer-Predator-Logo.png" alt="Reparación Acer Predator" title="Soporte Acer Predator" data-local="logos/predator.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/Dell-G-Series-Logo.png" alt="Reparación Dell G Series" title="Soporte Dell G Series" data-local="logos/gseries.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" alt="Soporte para equipos Razer" title="Soporte Razer" data-local="logos/razer.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-ROG-Logo.png" alt="Mantenimiento ASUS ROG" title="Soporte ASUS ROG" data-local="logos/rog.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Alienware-Logo.png" alt="Reparación Alienware" title="Soporte Alienware" data-local="logos/alienware.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Lenovo-Legion-Logo.png" alt="Reparación Lenovo Legion" title="Soporte Lenovo Legion" data-local="logos/legion.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/HP-Omen-Logo.png" alt="Reparación HP Omen" title="Soporte HP Omen" data-local="logos/omen.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Asus-TUF-Logo.png" alt="Reparación ASUS TUF" title="Soporte ASUS TUF" data-local="logos/tuf.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/MSI-Logo.png" alt="Reparación PC MSI Gaming" title="Soporte MSI Gaming" data-local="logos/msi.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Acer-Predator-Logo.png" alt="Reparación Acer Predator" title="Soporte Acer Predator" data-local="logos/predator.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/04/Dell-G-Series-Logo.png" alt="Reparación Dell G Series" title="Soporte Dell G Series" data-local="logos/gseries.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" alt="Soporte para equipos Razer" title="Soporte Razer" data-local="logos/razer.png" loading="lazy">
       </div>
     </div>
 
     <div class="categoria">
       <h3>Reparación de Consolas de Videojuegos</h3>
       <div class="marcas">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/PlayStation-Logo.png" alt="Reparación de PS4 y PS5 en Mar del Plata" title="Servicio técnico PlayStation PS4 PS5" data-local="logos/playstation.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Xbox-Logo.png" alt="Reparación de Xbox One y Series X en Mar del Plata" title="Servicio técnico Xbox" data-local="logos/xbox.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Logo.png" alt="Reparación de consolas Nintendo" title="Servicio técnico Nintendo" data-local="logos/nintendo.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Switch-Logo.png" alt="Reparación de Nintendo Switch en Mar del Plata" title="Servicio técnico Nintendo Switch" data-local="logos/switch.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Sega-Logo.png" alt="Mantenimiento de consolas Sega" title="Soporte Sega" data-local="logos/sega.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Steam-Logo.png" alt="Servicio técnico Steam Deck" title="Soporte Steam Deck" data-local="logos/steam.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Oculus-Logo.png" alt="Reparación de visores VR Oculus" title="Soporte Oculus VR" data-local="logos/oculus.png">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Valve-Logo.png" alt="Soporte técnico Valve" title="Soporte Valve" data-local="logos/valve.png">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/PlayStation-Logo.png" alt="Reparación de PS4 y PS5 en Mar del Plata" title="Servicio técnico PlayStation PS4 PS5" data-local="logos/playstation.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Xbox-Logo.png" alt="Reparación de Xbox One y Series X en Mar del Plata" title="Servicio técnico Xbox" data-local="logos/xbox.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Logo.png" alt="Reparación de consolas Nintendo" title="Servicio técnico Nintendo" data-local="logos/nintendo.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nintendo-Switch-Logo.png" alt="Reparación de Nintendo Switch en Mar del Plata" title="Servicio técnico Nintendo Switch" data-local="logos/switch.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Sega-Logo.png" alt="Mantenimiento de consolas Sega" title="Soporte Sega" data-local="logos/sega.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Steam-Logo.png" alt="Servicio técnico Steam Deck" title="Soporte Steam Deck" data-local="logos/steam.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Oculus-Logo.png" alt="Reparación de visores VR Oculus" title="Soporte Oculus VR" data-local="logos/oculus.png" loading="lazy">
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Valve-Logo.png" alt="Soporte técnico Valve" title="Soporte Valve" data-local="logos/valve.png" loading="lazy">
       </div>
     </div>
   </div>
